@@ -2,385 +2,42 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Simuladão Segurança da Informação | Marco Aurélio Siqueira</title>
+    <title>Simuladão TI – 500 Questões no Estilo CESPE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        @media print {
-            @page {
-                size: A4 portrait;
-                margin: 1.5cm;
-            }
-            body {
-                -webkit-print-color-adjust: exact;
-                color-adjust: exact;
-            }
-            .header, .footer, .btn, .menu-disciplinas, .resultado-final .cta {
-                display: none !important;
-            }
-            .resultado-final {
-                display: block !important;
-            }
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f8f9fa;
-            color: #333;
-            line-height: 1.7;
-        }
-
-        .container {
-            max-width: 21cm;
-            margin: 1.5cm auto;
-            padding: 1.5cm;
-            box-sizing: border-box;
-            background: #ffffff;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e0e0e0;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid #007bff;
-        }
-
-        .header h1 {
-            font-size: 2em;
-            color: #007bff;
-            margin: 0;
-        }
-
-        .header p {
-            color: #555;
-            font-size: 1.1em;
-            margin: 5px 0;
-        }
-
-        .menu-disciplinas {
-            background: #f0f0f0;
-            padding: 15px;
-            border-radius: 10px;
-            margin: 20px 0;
-            text-align: center;
-            font-size: 0.95em;
-        }
-
-        .menu-disciplinas p {
-            margin: 10px 0;
-            color: #555;
-        }
-
-        .disciplinas {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 10px;
-        }
-
-        .disciplina {
-            background: #007bff;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            cursor: pointer;
-        }
-
-        .destaque {
-            background: #d1ecf1;
-            border-left: 5px solid #007bff;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 0 10px 10px 0;
-            color: #0c5460;
-            font-size: 0.96em;
-        }
-
-        .tema {
-            font-size: 1.6em;
-            color: #007bff;
-            margin: 30px 0 15px;
-            padding: 10px 0;
-            border-bottom: 2px solid #007bff;
-        }
-
-        .questao {
-            background-color: #ffffff;
-            border: 1px solid #dce4ec;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 25px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            page-break-inside: avoid;
-        }
-
-        .banca {
-            font-size: 0.95em;
-            color: #6c757d;
-            font-style: italic;
-            margin: 5px 0 10px;
-        }
-
-        .enunciado {
-            font-weight: bold;
-            font-size: 1.05em;
-            margin-bottom: 15px;
-            color: #2c3e50;
-        }
-
-        .alternativas {
-            margin: 15px 0;
-        }
-
-        .alternativa {
-            display: block;
-            margin: 8px 0;
-            padding: 10px;
-            background-color: #f8f9fa;
-            border: 1px solid #e9ecef;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .alternativa:hover {
-            background-color: #e9ecef;
-            border-color: #007bff;
-        }
-
-        .alternativa.correta {
-            background-color: #d4edda;
-            border-color: #28a745;
-            color: #155724;
-        }
-
-        .alternativa.errada {
-            background-color: #f8d7da;
-            border-color: #dc3545;
-            color: #721c24;
-        }
-
-        .feedback {
-            margin: 15px 0;
-            padding: 12px;
-            border-radius: 8px;
-            font-size: 0.96em;
-            display: none;
-        }
-
-        .comentario {
-            color: #555;
-            background-color: #f8f9fa;
-            padding: 12px;
-            border-left: 4px solid #3498db;
-            border-radius: 0 8px 8px 0;
-            margin: 15px 0;
-            line-height: 1.6;
-        }
-
-        .dica-banca {
-            background-color: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 12px;
-            margin: 15px 0;
-            border-radius: 0 8px 8px 0;
-            color: #856404;
-            font-size: 0.96em;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1em;
-            margin: 10px 5px;
-            text-decoration: none;
-            text-align: center;
-        }
-
-        .btn:hover {
-            background-color: #0056b3;
-        }
-
-        .botoes {
-            text-align: center;
-            margin: 30px 0;
-        }
-
-        .resultado-final {
-            text-align: center;
-            padding: 25px;
-            margin: 30px 0;
-            border-radius: 10px;
-            font-size: 1.2em;
-            font-weight: bold;
-            background-color: #f8f9fa;
-            border: 2px dashed #007bff;
-            display: none;
-        }
-
-        .resultado-final p {
-            margin: 10px 0;
-            line-height: 1.6;
-        }
-
-        .resultado-final .cta {
-            margin-top: 20px;
-            font-size: 1em;
-            font-weight: normal;
-            color: #555;
-        }
-
-        .resultado-final .cta a {
-            color: #007bff;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .footer {
-            text-align: center;
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px dashed #ccc;
-            color: #666;
-            font-size: 0.9em;
-            font-style: italic;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>🔐 Simuladão Interativo: Segurança da Informação</h1>
-            <p>50 Questões no Estilo CESPE – Correção Automática</p>
+        <header>
+            <h1>🚀 Simuladão TI</h1>
+            <p>500 Questões no Estilo CESPE – Gabarito Comentado e Dicas por Banca</p>
+        </header>
+
+        <div class="destaque">
+            ✍️ Cada disciplina tem 50 questões com <strong>comentários técnicos</strong> e <strong>dicas estratégicas</strong>.
         </div>
 
         <div class="menu-disciplinas">
-            <p><strong>Escolha outra disciplina:</strong></p>
-            <div class="disciplinas">
-                <div class="disciplina">Redes</div>
-                <div class="disciplina">COBIT/ITIL</div>
-                <div class="disciplina">DevOps</div>
-                <div class="disciplina">Banco de Dados</div>
-                <div class="disciplina">Governança de TI</div>
-                <div class="disciplina">Metodologias Ágeis</div>
-                <div class="disciplina">Sistemas Operacionais</div>
-                <div class="disciplina">Programação</div>
-                <div class="disciplina">Cloud Computing</div>
-                <div class="disciplina">LGPD e Ética</div>
-            </div>
-            <p><small>Clique para ver simuladões de outras áreas</small></p>
-        </div>
-
-        <div class="destaque">
-            ✍️ Clique na sua resposta. O feedback aparece automaticamente. Ideal para revisão ativa.
-        </div>
-
-        <div class="tema">1. Fundamentos de Segurança</div>
-
-        <!-- Questão 1 -->
-        <div class="questao">
-            <p class="banca">CESPE – TCU – 2023</p>
-            <p class="enunciado">1. A confidencialidade garante que os dados não serão alterados durante a transmissão.</p>
-            <div class="alternativas">
-                <div class="alternativa" onclick="checkAnswer(this, 'errada', 1)">a) Certo</div>
-                <div class="alternativa" onclick="checkAnswer(this, 'correta', 1)">b) Errado</div>
-            </div>
-            <div class="feedback" id="feedback-1"></div>
-            <div class="comentario">
-                <strong>Comentário:</strong> Confidencialidade = sigilo. Integridade = proteção contra alteração. A frase troca os conceitos.
-            </div>
-            <div class="dica-banca">
-                <strong>📌 Dica CESPE:</strong> "Confidencialidade impede alteração" → sempre errado.
+            <h2>Escolha uma Disciplina</h2>
+            <div class="grid">
+                <a href="disciplinas/arquitetura/index.html" class="card">Arquitetura de Software</a>
+                <a href="disciplinas/engenharia-software/index.html" class="card">Engenharia de Software</a>
+                <a href="disciplinas/banco-de-dados/index.html" class="card">Banco de Dados</a>
+                <a href="disciplinas/redes/index.html" class="card">Redes de Computadores</a>
+                <a href="disciplinas/governanca/index.html" class="card">Governança de TI (COBIT/ITIL)</a>
+                <a href="disciplinas/metodologias-agil/index.html" class="card">Metodologias Ágeis</a>
+                <a href="disciplinas/devops/index.html" class="card">DevOps</a>
+                <a href="disciplinas/cloud-computing/index.html" class="card">Cloud Computing</a>
+                <a href="disciplinas/programacao/index.html" class="card">Programação</a>
+                <a href="disciplinas/sistemas-operacionais/index.html" class="card">Sistemas Operacionais</a>
             </div>
         </div>
 
-        <!-- Questão 2 -->
-        <div class="questao">
-            <p class="banca">CESPE – MPU – 2022</p>
-            <p class="enunciado">2. O uso de criptografia simétrica elimina a necessidade de um canal seguro para troca de chaves.</p>
-            <div class="alternativas">
-                <div class="alternativa" onclick="checkAnswer(this, 'errada', 2)">a) Certo</div>
-                <div class="alternativa" onclick="checkAnswer(this, 'correta', 2)">b) Errado</div>
-            </div>
-            <div class="feedback" id="feedback-2"></div>
-            <div class="comentario">
-                <strong>Comentário:</strong> Criptografia simétrica exige que ambas as partes tenham a mesma chave, o que demanda um canal seguro para troca.
-            </div>
-            <div class="dica-banca">
-                <strong>📌 Dica CESPE:</strong> Sempre que vir "elimina a necessidade", desconfie. É geralmente falso.
-            </div>
-        </div>
-
-        <!-- Botões de Ação -->
-        <div class="botoes">
-            <button class="btn" onclick="showFinalResult()">Ver Resultado Final</button>
-            <button class="btn" onclick="window.print()">📥 Baixar PDF</button>
-        </div>
-
-        <!-- Resultado Final -->
-        <div class="resultado-final" id="resultado-final">
-            <p>🎉 Parabéns! Você completou o Simuladão de Segurança da Informação.</p>
-            <p>Se você acertou mais de 40 questões, está no caminho certo para conquistar sua vaga.</p>
-            <p class="cta">
-                Quer aprofundar ainda mais? <a href="https://www.youtube.com/@marcoasiqueira" target="_blank">Visite meu canal no YouTube</a> para videoaulas gratuitas.<br>
-                Para materiais completos, exercícios extras e planos de estudo, <a href="https://maureliosiqueira.github.io/Guia_gratuito_TI/" target="_blank">acesse o site oficial</a>.
-            </p>
-        </div>
-
-        <div class="footer">
-            © 2025 | Marco Aurélio Siqueira | Simuladão Interativo – Concursos de TI<br>
-            "Treine com inteligência, não só com volume"
-        </div>
+        <footer class="footer">
+            © 2025 | Marco Aurélio Siqueira | 
+            <a href="https://www.youtube.com/channel/UCFLK2Bw4KIDwiKd9pN_tI7Q" target="_blank">YouTube</a> | 
+            <a href="https://app.hotmart.com/products/producer" target="_blank">Materiais Completos</a>
+        </footer>
     </div>
-
-    <script>
-        let acertos = 0;
-        const total = 2; // Apenas 2 questões no exemplo. Em produção: 50
-
-        function checkAnswer(element, correta, num) {
-            const alternativas = element.parentElement.querySelectorAll('.alternativa');
-            alternativas.forEach(el => {
-                el.classList.remove('correta');
-                el.classList.remove('errada');
-            });
-
-            element.classList.add(correta);
-
-            const feedback = document.getElementById(`feedback-${num}`);
-            if (correta === 'correta') {
-                feedback.innerHTML = "✅ Correto! Esta é a resposta certa.";
-                feedback.style.backgroundColor = "#d4edda";
-                feedback.style.borderColor = "#28a745";
-                feedback.style.color = "#155724";
-                acertos++;
-            } else {
-                feedback.innerHTML = "❌ Errado! Esta alternativa está incorreta.";
-                feedback.style.backgroundColor = "#f8d7da";
-                feedback.style.borderColor = "#dc3545";
-                feedback.style.color = "#721c24";
-            }
-            feedback.style.display = "block";
-        }
-
-        function showFinalResult() {
-            const resultadoDiv = document.getElementById('resultado-final');
-            const percentual = (acertos / total) * 100;
-            resultadoDiv.style.display = "block";
-
-            // Scroll suave para o resultado
-            resultadoDiv.scrollIntoView({ behavior: 'smooth' });
-        }
-    </script>
 </body>
 </html>
