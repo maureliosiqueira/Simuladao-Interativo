@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Banco de Dados – 50 Questões | Marco A. Siqueira</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <style>
+        .questao {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .banca {
+            font-size: 0.9em;
+            color: #6c757d;
+            font-style: italic;
+            margin: 5px 0 10px;
+        }
+        .enunciado {
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        .comentario {
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.96em;
+            color: #555;
+        }
+        .dica-banca {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+            color: #856404;
+            font-size: 0.96em;
+        }
+        .rascunho {
+            margin-top: 20px;
+            padding: 30px 15px;
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            text-align: center;
+            font-style: italic;
+            color: #777;
+            background-color: #f9f9f9;
+        }
+        .botoes {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin: 10px 5px;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Banco de Dados</h1>
+            <p>50 Questões no Estilo CESPE com Gabarito e Comentários Técnicos</p>
+        </header>
+
+        <div class="destaque">
+            ✍️ Use o espaço de <strong>rascunho após cada questão</strong> para anotar suas reflexões e revisar com mais eficácia.
+        </div>
+
+        <!-- Questão 1 -->
+        <div class="questao">
+            <p class="banca">CESPE – TCU – 2022</p>
+            <p class="enunciado">1. A normalização em banco de dados tem como objetivo principal aumentar a redundância de dados para melhorar o desempenho.</p>
+            <p><strong>Gabarito: b) Errado</strong></p>
+            <div class="comentario">
+                <strong>Comentário:</strong> O objetivo da normalização é <strong>reduzir a redundância</strong> e melhorar a integridade dos dados. A desnormalização pode ser usada para desempenho, mas não é o foco da normalização.
+            </div>
+            <div class="dica-banca">
+                <strong>📌 Dica CESPE:</strong> "Aumentar a redundância" em normalização = sempre errado.
+            </div>
+            <div class="rascunho">Seu rascunho aqui...</div>
+        </div>
+
+        <!-- Questão 2 -->
+        <div class="questao">
+            <p class="banca">CESPE – TRE-SP – 2023</p>
+            <p class="enunciado">2. Um índice em um banco de dados relacional garante a integridade referencial entre tabelas.</p>
+            <p><strong>Gabarito: b) Errado</strong></p>
+            <div class="comentario">
+                <strong>Comentário:</strong> Índices <strong>aceleram consultas</strong>, mas não garantem integridade. A integridade referencial é garantida por <strong>chaves estrangeiras (foreign keys)</strong>.
+            </div>
+            <div class="dica-banca">
+                <strong>📌 Dica CESPE:</strong> Confundir índice com chave estrangeira é uma armadilha clássica.
+            </div>
+            <div class="rascunho">Seu rascunho aqui...</div>
+        </div>
+
+        <!-- Questão 3 -->
+        <div class="questao">
+            <p class="banca">CESPE – MPU – 2022</p>
+            <p class="enunciado">3. Em uma transação de banco de dados, a propriedade de isolamento garante que, mesmo em caso de falha, o banco retorne a um estado consistente.</p>
+            <p><strong>Gabarito: b) Errado</strong></p>
+            <div class="comentario">
+                <strong>Comentário:</strong> Isolamento refere-se à <strong>execução concorrente</strong> de transações. A propriedade que garante retorno a um estado consistente após falha é a <strong>durabilidade (D de ACID)</strong>.
+            </div>
+            <div class="dica-banca">
+                <strong>📌 Dica CESPE:</strong> "Isolamento" + "falha" = armadilha. Confundir isolamento com durabilidade é comum.
+            </div>
+            <div class="rascunho">Seu rascunho aqui...</div>
+        </div>
+
+        <!-- Questão 4 -->
+        <div class="questao">
+            <p class="banca">CESPE – TST – 2023</p>
+            <p class="enunciado">4. O comando DELETE em SQL remove permanentemente uma tabela do banco de dados.</p>
+            <p><strong>Gabarito: b) Errado</strong></p>
+            <div class="comentario">
+                <strong>Comentário:</strong> O comando <strong>DELETE</strong> remove <strong>linhas</strong> de uma tabela. Para remover a tabela inteira, usa-se <strong>DROP TABLE</strong>.
+            </div>
+            <div class="dica-banca">
+                <strong>📌 Dica CESPE:</strong> "DELETE remove tabela" = sempre errado.
+            </div>
+            <div class="rascunho">Seu rascunho aqui...</div>
+        </div>
+
+        <!-- Questão 5 -->
+        <div class="questao">
+            <p class="banca">CESPE – INSS – 2022</p>
+            <p class="enunciado">5. O modelo de dados NoSQL é sempre mais adequado que o relacional para aplicações governamentais com dados estruturados.</p>
+            <p><strong>Gabarito: b) Errado</strong></p>
+            <div class="comentario">
+                <strong>Comentário:</strong> Bancos relacionais são mais adequados para dados estruturados com integridade e transações ACID. NoSQL é ideal para dados não estruturados ou alta escalabilidade.
+            </div>
+            <div class="dica-banca">
+                <strong>📌 Dica CESPE:</strong> Generalizações como "sempre mais adequado" costumam ser falsas.
+            </div>
+            <div class="rascunho">Seu rascunho aqui...</div>
+        </div>
+
+        <!-- Botões -->
+        <div class="botoes">
+            <button class="btn" onclick="window.print()">📥 Baixar PDF</button>
+            <a href="../../index.html" class="btn">↩️ Voltar ao Menu</a>
+        </div>
+
+        <footer class="footer">
+            © 2025 | Marco Aurélio Siqueira | 
+            <a href="https://www.youtube.com/channel/UCFLK2Bw4KIDwiKd9pN_tI7Q" target="_blank">YouTube</a> | 
+            <a href="https://app.hotmart.com/products/producer" target="_blank">Materiais Completos</a>
+        </footer>
+    </div>
+</body>
+</html>
