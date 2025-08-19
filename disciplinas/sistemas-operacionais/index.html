@@ -1,1 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistemas Operacionais – 10 Questões | Marco A. Siqueira</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <style>
+        .questao {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .banca {
+            font-size: 0.9em;
+            color: #6c757d;
+            font-style: italic;
+            margin: 5px 0 10px;
+        }
+        .enunciado {
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        .alternativas {
+            margin: 10px 0;
+        }
+        .alternativas p {
+            margin: 8px 0;
+        }
+        .gabarito {
+            font-weight: bold;
+            color: #27ae60;
+            margin: 10px 0;
+            padding: 12px;
+            background-color: #f0fff4;
+            border-left: 4px solid #27ae60;
+            border-radius: 0 8px 8px 0;
+        }
+        .comentario {
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.96em;
+            color: #555;
+        }
+        .rascunho {
+            margin-top: 20px;
+            padding: 30px 15px;
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            text-align: center;
+            font-style: italic;
+            color: #777;
+            background-color: #f9f9f9;
+        }
+        .rascunho span {
+            font-weight: bold;
+            color: #333;
+        }
+        .botoes {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin: 10px 5px;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sistemas Operacionais</h1>
+            <p>10 Questões no Estilo CESPE com Gabarito e Comentários Técnicos</p>
+        </header>
 
+        <div class="destaque">
+            ✍️ Use o espaço de <strong>rascunho após cada questão</strong> para anotar suas reflexões e revisar com mais eficácia.
+        </div>
+
+        <!-- Questão 1 -->
+        <div class="questao">
+            <p class="banca">CESPE – TCU – 2023</p>
+            <p class="enunciado">1. O sistema operacional é responsável pelo gerenciamento de processos, memória e dispositivos.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: a) Certo</p>
+            <div class="comentario">
+                O SO atua como intermediário entre hardware e software, gerenciando recursos para garantir desempenho e segurança em sistemas governamentais.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 2 -->
+        <div class="questao">
+            <p class="banca">CESPE – MPU – 2022</p>
+            <p class="enunciado">2. O modo kernel do sistema operacional permite acesso direto ao hardware.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: a) Certo</p>
+            <div class="comentario">
+                O modo kernel tem privilégios máximos. Aplicações rodam em modo usuário, com acesso limitado, aumentando a segurança.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 3 -->
+        <div class="questao">
+            <p class="banca">CESPE – TRE-SP – 2023</p>
+            <p class="enunciado">3. O escalonamento de processos em um sistema operacional pode ser preemptivo ou cooperativo.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: a) Certo</p>
+            <div class="comentario">
+                Escalonamento preemptivo interrompe processos com base em tempo ou prioridade. Cooperativo depende da cooperação do processo.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 4 -->
+        <div class="questao">
+            <p class="banca">CESPE – INSS – 2022</p>
+            <p class="enunciado">4. O sistema de arquivos NTFS é exclusivo de sistemas Linux.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
+            <div class="comentario">
+                NTFS é padrão do Windows. Linux usa ext4, XFS, entre outros. Confundir sistemas de arquivos é armadilha comum.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 5 -->
+        <div class="questao">
+            <p class="banca">CESPE – TST – 2023</p>
+            <p class="enunciado">5. O swap é uma área em disco usada como extensão da memória RAM.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: a) Certo</p>
+            <div class="comentario">
+                Quando a RAM está cheia, o SO move páginas para o swap. Embora mais lento, evita falhas por falta de memória.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 6 -->
+        <div class="questao">
+            <p class="banca">CESPE – STM – 2022</p>
+            <p class="enunciado">6. O sistema operacional não interfere na segurança dos dados armazenados em disco.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
+            <div class="comentario">
+                O SO controla permissões de acesso, criptografia (ex: BitLocker, LUKS) e logs de acesso. É peça-chave na segurança de dados.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 7 -->
+        <div class="questao">
+            <p class="banca">CESPE – TCU – 2022</p>
+            <p class="enunciado">7. O ext4 é um sistema de arquivos moderno, estável e amplamente usado em servidores Linux.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: a) Certo</p>
+            <div class="comentario">
+                ext4 oferece journaling, suporte a grandes volumes e boa performance. Ideal para servidores governamentais com alta disponibilidade.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 8 -->
+        <div class="questao">
+            <p class="banca">CESPE – TRE-AM – 2023</p>
+            <p class="enunciado">8. Um processo em estado de espera (blocked) está consumindo CPU.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
+            <div class="comentario">
+                Processo em espera está aguardando evento (ex: I/O). Não consome CPU. A CESPE testa conhecimento de estados de processo.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 9 -->
+        <div class="questao">
+            <p class="banca">CESPE – INSS – 2022</p>
+            <p class="enunciado">9. O comando chmod em Linux é usado para alterar permissões de arquivos e diretórios.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: a) Certo</p>
+            <div class="comentario">
+                chmod define permissões de leitura (r), escrita (w) e execução (x) para dono, grupo e outros. Fundamental para segurança.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 10 -->
+        <div class="questao">
+            <p class="banca">CESPE – TST – 2023</p>
+            <p class="enunciado">10. O sistema operacional Windows é baseado em microkernel, enquanto o Linux é baseado em monolítico.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
+            <div class="comentario">
+                Linux é monolítico. Windows usa núcleo híbrido (não puro microkernel). A CESPE inverte conceitos para testar atenção.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <div class="botoes">
+            <button class="btn" onclick="window.print()">📥 Baixar PDF</button>
+            <a href="../../index.html" class="btn">↩️ Voltar ao Menu</a>
+        </div>
+
+        <footer class="footer">
+            © 2025 | Marco Aurélio Siqueira | 
+            <a href="https://www.youtube.com/channel/UCFLK2Bw4KIDwiKd9pN_tI7Q" target="_blank">YouTube</a> | 
+            <a href="https://app.hotmart.com/products/producer" target="_blank">Materiais Completos</a>
+        </footer>
+    </div>
+</body>
+</html>
