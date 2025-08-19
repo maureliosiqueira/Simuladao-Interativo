@@ -28,11 +28,29 @@
             margin-bottom: 15px;
             color: #2c3e50;
         }
-        .alternativas {
-            margin: 10px 0;
-        }
         .alternativas p {
             margin: 8px 0;
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .alternativas p:hover {
+            background-color: #f1f3f5;
+            border-color: #007bff;
+        }
+        .alternativa-certa {
+            background-color: #d4edda !important;
+            border-color: #27ae60 !important;
+            color: #155724;
+            font-weight: bold;
+        }
+        .alternativa-errada {
+            background-color: #f8d7da !important;
+            border-color: #c82333 !important;
+            color: #721c24;
+            font-weight: bold;
         }
         .gabarito {
             font-weight: bold;
@@ -42,6 +60,7 @@
             background-color: #f0fff4;
             border-left: 4px solid #27ae60;
             border-radius: 0 8px 8px 0;
+            display: none;
         }
         .comentario {
             background: #f8f9fa;
@@ -51,6 +70,7 @@
             border-radius: 0 8px 8px 0;
             font-size: 0.96em;
             color: #555;
+            display: none;
         }
         .rascunho {
             margin-top: 20px;
@@ -91,11 +111,11 @@
     <div class="container">
         <header>
             <h1>Banco de Dados</h1>
-            <p>10 Questões no Estilo CESPE com Gabarito e Comentários Técnicos</p>
+            <p>10 Questões no Estilo CESPE com Feedback Imediato</p>
         </header>
 
         <div class="destaque">
-            ✍️ Use o espaço de <strong>rascunho após cada questão</strong> para anotar suas reflexões e revisar com mais eficácia.
+            ✍️ Clique na alternativa para ver o gabarito. O simulado começa do zero a cada acesso.
         </div>
 
         <!-- Questão 1 -->
@@ -103,10 +123,10 @@
             <p class="banca">CESPE – TCU – 2022</p>
             <p class="enunciado">1. A normalização em banco de dados tem como objetivo principal aumentar a redundância de dados para melhorar o desempenho.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, false, 1)">a) Certo</p>
+                <p onclick="marcar(this, true, 1)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: b) Errado</p>
+            <p class="gabarito">✅ Gabarito: b) Errado</p>
             <div class="comentario">
                 O objetivo da normalização é <strong>reduzir a redundância</strong> e melhorar a integridade dos dados. A desnormalização pode ser usada para desempenho, mas não é o foco da normalização.
             </div>
@@ -118,10 +138,10 @@
             <p class="banca">CESPE – TRE-SP – 2023</p>
             <p class="enunciado">2. Um índice em um banco de dados relacional garante a integridade referencial entre tabelas.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, false, 2)">a) Certo</p>
+                <p onclick="marcar(this, true, 2)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: b) Errado</p>
+            <p class="gabarito">✅ Gabarito: b) Errado</p>
             <div class="comentario">
                 Índices <strong>aceleram consultas</strong>, mas não garantem integridade. A integridade referencial é garantida por <strong>chaves estrangeiras (foreign keys)</strong>.
             </div>
@@ -133,10 +153,10 @@
             <p class="banca">CESPE – MPU – 2022</p>
             <p class="enunciado">3. Em uma transação de banco de dados, a propriedade de isolamento garante que, mesmo em caso de falha, o banco retorne a um estado consistente.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, false, 3)">a) Certo</p>
+                <p onclick="marcar(this, true, 3)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: b) Errado</p>
+            <p class="gabarito">✅ Gabarito: b) Errado</p>
             <div class="comentario">
                 Isolamento refere-se à <strong>execução concorrente</strong> de transações. A propriedade que garante retorno a um estado consistente após falha é a <strong>durabilidade (D de ACID)</strong>.
             </div>
@@ -148,10 +168,10 @@
             <p class="banca">CESPE – TST – 2023</p>
             <p class="enunciado">4. O comando DELETE em SQL remove permanentemente uma tabela do banco de dados.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, false, 4)">a) Certo</p>
+                <p onclick="marcar(this, true, 4)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: b) Errado</p>
+            <p class="gabarito">✅ Gabarito: b) Errado</p>
             <div class="comentario">
                 O comando <strong>DELETE</strong> remove <strong>linhas</strong> de uma tabela. Para remover a tabela inteira, usa-se <strong>DROP TABLE</strong>.
             </div>
@@ -163,10 +183,10 @@
             <p class="banca">CESPE – INSS – 2022</p>
             <p class="enunciado">5. O modelo de dados NoSQL é sempre mais adequado que o relacional para aplicações governamentais com dados estruturados.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, false, 5)">a) Certo</p>
+                <p onclick="marcar(this, true, 5)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: b) Errado</p>
+            <p class="gabarito">✅ Gabarito: b) Errado</p>
             <div class="comentario">
                 Bancos relacionais são mais adequados para dados estruturados com integridade e transações ACID. NoSQL é ideal para dados não estruturados ou alta escalabilidade.
             </div>
@@ -178,10 +198,10 @@
             <p class="banca">CESPE – TCU – 2023</p>
             <p class="enunciado">6. A normalização elimina completamente a redundância de dados em um banco de dados.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, false, 6)">a) Certo</p>
+                <p onclick="marcar(this, true, 6)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: b) Errado</p>
+            <p class="gabarito">✅ Gabarito: b) Errado</p>
             <div class="comentario">
                 A normalização <strong>reduz</strong> a redundância, mas não a elimina completamente. Algumas redundâncias podem ser mantidas para desempenho (desnormalização).
             </div>
@@ -193,10 +213,10 @@
             <p class="banca">CESPE – TRE-SP – 2022</p>
             <p class="enunciado">7. Uma view em SQL é um objeto que armazena dados fisicamente no banco de dados.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, false, 7)">a) Certo</p>
+                <p onclick="marcar(this, true, 7)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: b) Errado</p>
+            <p class="gabarito">✅ Gabarito: b) Errado</p>
             <div class="comentario">
                 Uma view é uma <strong>consulta virtual</strong> que não armazena dados fisicamente. Ela exibe dados de uma ou mais tabelas com base em uma consulta SQL.
             </div>
@@ -208,10 +228,10 @@
             <p class="banca">CESPE – MPU – 2023</p>
             <p class="enunciado">8. O comando TRUNCATE em SQL remove todas as linhas de uma tabela, mas mantém sua estrutura.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, true, 8)">a) Certo</p>
+                <p onclick="marcar(this, false, 8)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: a) Certo</p>
+            <p class="gabarito">✅ Gabarito: a) Certo</p>
             <div class="comentario">
                 TRUNCATE é um comando DDL que remove todos os dados da tabela de forma rápida, mas mantém a estrutura (colunas, índices, etc.).
             </div>
@@ -223,10 +243,10 @@
             <p class="banca">CESPE – INSS – 2022</p>
             <p class="enunciado">9. O JOIN em SQL é usado para combinar linhas de duas ou mais tabelas com base em uma coluna relacionada.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, true, 9)">a) Certo</p>
+                <p onclick="marcar(this, false, 9)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: a) Certo</p>
+            <p class="gabarito">✅ Gabarito: a) Certo</p>
             <div class="comentario">
                 JOIN é essencial para consultar dados relacionais. Tipos comuns: INNER JOIN, LEFT JOIN, RIGHT JOIN.
             </div>
@@ -238,10 +258,10 @@
             <p class="banca">CESPE – TST – 2023</p>
             <p class="enunciado">10. A cláusula HAVING em SQL é usada para filtrar grupos após a agregação, enquanto WHERE filtra linhas antes.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, true, 10)">a) Certo</p>
+                <p onclick="marcar(this, false, 10)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: a) Certo</p>
+            <p class="gabarito">✅ Gabarito: a) Certo</p>
             <div class="comentario">
                 HAVING é usado com GROUP BY para filtrar resultados agregados. WHERE filtra linhas individuais antes da agregação.
             </div>
@@ -253,48 +273,49 @@
             <a href="../../index.html" class="btn">↩️ Voltar ao Menu</a>
         </div>
 
-        <!-- ✅ SCRIPT DE RESET -->
-        <script>
-            function resetSimulado() {
-                const alternativas = document.querySelectorAll('.alternativas p');
-                alternativas.forEach(el => {
-                    el.style.fontWeight = 'normal';
-                    el.style.backgroundColor = '#f8f9fa';
-                    el.style.borderColor = '#e9ecef';
-                });
-
-                const comentarios = document.querySelectorAll('.comentario');
-                comentarios.forEach(el => {
-                    el.style.display = 'none';
-                });
-
-                const radios = document.querySelectorAll('input[type="radio"]');
-                radios.forEach(input => {
-                    input.checked = false;
-                });
-
-                const rascunhos = document.querySelectorAll('.rascunho');
-                rascunhos.forEach(el => {
-                    el.innerHTML = '<span>Anotações:</span>';
-                });
-
-                window.scrollTo(0, 0);
-            }
-
-            document.addEventListener('DOMContentLoaded', resetSimulado);
-
-            window.onpageshow = function(event) {
-                if (event.persisted) {
-                    window.location.reload();
-                }
-            };
-        </script>
-
         <footer class="footer">
             © 2025 | Marco Aurélio Siqueira | 
             <a href="https://www.youtube.com/channel/UCFLK2Bw4KIDwiKd9pN_tI7Q" target="_blank">YouTube</a> | 
             <a href="https://app.hotmart.com/products/producer" target="_blank">Materiais Completos</a>
         </footer>
     </div>
+
+    <script>
+        function marcar(elemento, estaCerto, questaoId) {
+            const alternativas = elemento.parentElement.querySelectorAll('p');
+            alternativas.forEach(el => {
+                el.style.fontWeight = 'normal';
+                el.style.backgroundColor = '#f8f9fa';
+                el.style.borderColor = '#e9ecef';
+            });
+
+            if (estaCerto) {
+                elemento.classList.add('alternativa-certa');
+            } else {
+                elemento.classList.add('alternativa-errada');
+            }
+
+            const gabarito = elemento.parentElement.nextElementSibling;
+            const comentario = gabarito.nextElementSibling;
+            gabarito.style.display = 'block';
+            comentario.style.display = 'block';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.gabarito, .comentario').forEach(el => {
+                el.style.display = 'none';
+            });
+            document.querySelectorAll('.alternativas p').forEach(el => {
+                el.classList.remove('alternativa-certa', 'alternativa-errada');
+            });
+            window.scrollTo(0, 0);
+        });
+
+        window.onpageshow = function(event) {
+            if (event.persisted) {
+                window.location.reload();
+            }
+        };
+    </script>
 </body>
 </html>
