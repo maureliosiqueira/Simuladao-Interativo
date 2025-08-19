@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <meta charset="UTF-8">
     <title>COBIT e ITIL – 10 Questões | Marco A. Siqueira</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,11 +28,29 @@
             margin-bottom: 15px;
             color: #2c3e50;
         }
-        .alternativas {
-            margin: 10px 0;
-        }
         .alternativas p {
             margin: 8px 0;
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .alternativas p:hover {
+            background-color: #f1f3f5;
+            border-color: #007bff;
+        }
+        .alternativa-certa {
+            background-color: #d4edda !important;
+            border-color: #27ae60 !important;
+            color: #155724;
+            font-weight: bold;
+        }
+        .alternativa-errada {
+            background-color: #f8d7da !important;
+            border-color: #c82333 !important;
+            color: #721c24;
+            font-weight: bold;
         }
         .gabarito {
             font-weight: bold;
@@ -39,6 +60,7 @@
             background-color: #f0fff4;
             border-left: 4px solid #27ae60;
             border-radius: 0 8px 8px 0;
+            display: none;
         }
         .comentario {
             background: #f8f9fa;
@@ -48,6 +70,7 @@
             border-radius: 0 8px 8px 0;
             font-size: 0.96em;
             color: #555;
+            display: none;
         }
         .rascunho {
             margin-top: 20px;
@@ -88,11 +111,11 @@
     <div class="container">
         <header>
             <h1>COBIT e ITIL (Governança de TI)</h1>
-            <p>10 Questões no Estilo CESPE com Gabarito e Comentários Técnicos</p>
+            <p>10 Questões no Estilo CESPE com Feedback Imediato</p>
         </header>
 
         <div class="destaque">
-            ✍️ Use o espaço de <strong>rascunho após cada questão</strong> para anotar suas reflexões e revisar com mais eficácia.
+            ✍️ Clique na alternativa para ver o gabarito. O simulado começa do zero a cada acesso.
         </div>
 
         <!-- Questão 1 -->
@@ -100,10 +123,10 @@
             <p class="banca">CESPE – TCU – 2023</p>
             <p class="enunciado">1. O COBIT é um framework voltado para a gestão de serviços de TI.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, false, 1)">a) Certo</p>
+                <p onclick="marcar(this, true, 1)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: b) Errado</p>
+            <p class="gabarito">✅ Gabarito: b) Errado</p>
             <div class="comentario">
                 COBIT é de <strong>governança</strong>. ITIL é de gestão de serviços. Confundir os dois é o erro mais comum.
             </div>
@@ -115,10 +138,10 @@
             <p class="banca">CESPE – MPU – 2022</p>
             <p class="enunciado">2. O ITIL v4 introduziu o conceito de quatro dimensões do serviço.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, true, 2)">a) Certo</p>
+                <p onclick="marcar(this, false, 2)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: a) Certo</p>
+            <p class="gabarito">✅ Gabarito: a) Certo</p>
             <div class="comentario">
                 As quatro dimensões são: organizações e pessoas, informação e tecnologia, parceiros e fornecedores, e fluxos de valor e processos.
             </div>
@@ -130,10 +153,10 @@
             <p class="banca">CESPE – TRE-SP – 2023</p>
             <p class="enunciado">3. A gestão de incidentes no ITIL tem como objetivo principal identificar a causa raiz de falhas.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, false, 3)">a) Certo</p>
+                <p onclick="marcar(this, true, 3)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: b) Errado</p>
+            <p class="gabarito">✅ Gabarito: b) Errado</p>
             <div class="comentario">
                 Identificar a causa raiz é da <strong>gestão de problemas</strong>. A gestão de incidentes foca na restauração rápida do serviço.
             </div>
@@ -145,10 +168,10 @@
             <p class="banca">CESPE – INSS – 2022</p>
             <p class="enunciado">4. No COBIT 2019, o domínio "Avaliar, Direcionar e Monitorar" (EDM) executa processos operacionais de TI.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, false, 4)">a) Certo</p>
+                <p onclick="marcar(this, true, 4)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: b) Errado</p>
+            <p class="gabarito">✅ Gabarito: b) Errado</p>
             <div class="comentario">
                 EDM é de governança. A execução é responsabilidade dos domínios APO e BAI.
             </div>
@@ -160,10 +183,10 @@
             <p class="banca">CESPE – TST – 2023</p>
             <p class="enunciado">5. Um KPI deve sempre estar alinhado a um objetivo de negócio.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, true, 5)">a) Certo</p>
+                <p onclick="marcar(this, false, 5)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: a) Certo</p>
+            <p class="gabarito">✅ Gabarito: a) Certo</p>
             <div class="comentario">
                 KPIs medem o progresso em direção a objetivos. Sem alinhamento, perdem o sentido.
             </div>
@@ -175,10 +198,10 @@
             <p class="banca">CESPE – STM – 2022</p>
             <p class="enunciado">6. O COBIT 2019 tem 6 domínios de governança e gestão.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, true, 6)">a) Certo</p>
+                <p onclick="marcar(this, false, 6)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: a) Certo</p>
+            <p class="gabarito">✅ Gabarito: a) Certo</p>
             <div class="comentario">
                 Os domínios são: EDM, APO, BAI, DSS, MEA e um novo focado em stakeholders.
             </div>
@@ -190,10 +213,10 @@
             <p class="banca">CESPE – TCU – 2022</p>
             <p class="enunciado">7. O ITIL v3 é baseado em ciclos de vida do serviço.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, true, 7)">a) Certo</p>
+                <p onclick="marcar(this, false, 7)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: a) Certo</p>
+            <p class="gabarito">✅ Gabarito: a) Certo</p>
             <div class="comentario">
                 O ITIL v3 organiza os processos em cinco fases: desenho, transição, operação, melhoria contínua e estratégia.
             </div>
@@ -205,10 +228,10 @@
             <p class="banca">CESPE – TRE-AM – 2023</p>
             <p class="enunciado">8. A gestão de mudanças no ITIL visa garantir que mudanças sejam avaliadas, autorizadas e implementadas de forma controlada.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, true, 8)">a) Certo</p>
+                <p onclick="marcar(this, false, 8)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: a) Certo</p>
+            <p class="gabarito">✅ Gabarito: a) Certo</p>
             <div class="comentario">
                 Evita falhas e interrupções. Fundamental em ambientes governamentais com alto rigor operacional.
             </div>
@@ -220,10 +243,10 @@
             <p class="banca">CESPE – INSS – 2022</p>
             <p class="enunciado">9. O COBIT pode ser usado para alinhar TI com objetivos de negócio.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, true, 9)">a) Certo</p>
+                <p onclick="marcar(this, false, 9)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: a) Certo</p>
+            <p class="gabarito">✅ Gabarito: a) Certo</p>
             <div class="comentario">
                 Um dos principais objetivos do COBIT é o alinhamento estratégico entre TI e negócio.
             </div>
@@ -235,10 +258,10 @@
             <p class="banca">CESPE – TST – 2023</p>
             <p class="enunciado">10. O ITIL é um padrão internacional de governança de TI.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, false, 10)">a) Certo</p>
+                <p onclick="marcar(this, true, 10)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: b) Errado</p>
+            <p class="gabarito">✅ Gabarito: b) Errado</p>
             <div class="comentario">
                 ITIL é de <strong>gestão de serviços</strong>. Governança de TI é foco do COBIT.
             </div>
@@ -256,5 +279,43 @@
             <a href="https://app.hotmart.com/products/producer" target="_blank">Materiais Completos</a>
         </footer>
     </div>
+
+    <script>
+        function marcar(elemento, estaCerto, questaoId) {
+            const alternativas = elemento.parentElement.querySelectorAll('p');
+            alternativas.forEach(el => {
+                el.style.fontWeight = 'normal';
+                el.style.backgroundColor = '#f8f9fa';
+                el.style.borderColor = '#e9ecef';
+            });
+
+            if (estaCerto) {
+                elemento.classList.add('alternativa-certa');
+            } else {
+                elemento.classList.add('alternativa-errada');
+            }
+
+            const gabarito = elemento.parentElement.nextElementSibling;
+            const comentario = gabarito.nextElementSibling;
+            gabarito.style.display = 'block';
+            comentario.style.display = 'block';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.gabarito, .comentario').forEach(el => {
+                el.style.display = 'none';
+            });
+            document.querySelectorAll('.alternativas p').forEach(el => {
+                el.classList.remove('alternativa-certa', 'alternativa-errada');
+            });
+            window.scrollTo(0, 0);
+        });
+
+        window.onpageshow = function(event) {
+            if (event.persisted) {
+                window.location.reload();
+            }
+        };
+    </script>
 </body>
 </html>
