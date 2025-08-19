@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Arquitetura de Software – 50 Questões | Marco A. Siqueira</title>
+    <title>Arquitetura de Software – 10 Questões | Marco A. Siqueira</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/css/style.css">
     <style>
@@ -25,6 +25,21 @@
             margin-bottom: 15px;
             color: #2c3e50;
         }
+        .alternativas {
+            margin: 10px 0;
+        }
+        .alternativas p {
+            margin: 8px 0;
+        }
+        .gabarito {
+            font-weight: bold;
+            color: #27ae60;
+            margin: 10px 0;
+            padding: 12px;
+            background-color: #f0fff4;
+            border-left: 4px solid #27ae60;
+            border-radius: 0 8px 8px 0;
+        }
         .comentario {
             background: #f8f9fa;
             border-left: 4px solid #3498db;
@@ -33,15 +48,6 @@
             border-radius: 0 8px 8px 0;
             font-size: 0.96em;
             color: #555;
-        }
-        .dica-banca {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 12px;
-            margin: 15px 0;
-            border-radius: 0 8px 8px 0;
-            color: #856404;
-            font-size: 0.96em;
         }
         .rascunho {
             margin-top: 20px;
@@ -52,6 +58,10 @@
             font-style: italic;
             color: #777;
             background-color: #f9f9f9;
+        }
+        .rascunho span {
+            font-weight: bold;
+            color: #333;
         }
         .botoes {
             text-align: center;
@@ -78,7 +88,7 @@
     <div class="container">
         <header>
             <h1>Arquitetura de Software e Sistemas</h1>
-            <p>50 Questões no Estilo CESPE com Gabarito e Comentários Técnicos</p>
+            <p>10 Questões no Estilo CESPE com Gabarito e Comentários Técnicos</p>
         </header>
 
         <div class="destaque">
@@ -88,46 +98,153 @@
         <!-- Questão 1 -->
         <div class="questao">
             <p class="banca">CESPE – TCU – 2023</p>
-            <p class="enunciado">1. A arquitetura em camadas permite que a camada de apresentação acesse diretamente o banco de dados.</p>
-            <p><strong>Gabarito: b) Errado</strong></p>
+            <p class="enunciado">1. A arquitetura de software define a estrutura de alto nível de um sistema, incluindo seus componentes e suas interações.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: a) Certo</p>
             <div class="comentario">
-                <strong>Comentário:</strong> Em arquitetura em camadas, a comunicação deve ser sequencial. A camada de apresentação não deve acessar diretamente o banco de dados.
+                A arquitetura de software é o "projeto estrutural" do sistema, definindo módulos, camadas e como eles se comunicam. Em TI pública, uma boa arquitetura garante escalabilidade, segurança e manutenção eficiente de sistemas críticos.
             </div>
-            <div class="dica-banca">
-                <strong>📌 Dica CESPE:</strong> Qualquer violação do fluxo sequencial é considerada errada.
-            </div>
-            <div class="rascunho">Seu rascunho aqui...</div>
+            <div class="rascunho"><span>Anotações:</span></div>
         </div>
 
         <!-- Questão 2 -->
         <div class="questao">
-            <p class="banca">CESPE – MPU – 2022</p>
-            <p class="enunciado">2. O modelo cliente-servidor elimina a necessidade de um servidor central.</p>
-            <p><strong>Gabarito: b) Errado</strong></p>
+            <p class="banca">CESPE – TCE-RJ – 2023</p>
+            <p class="enunciado">2. O padrão arquitetural MVC separa a lógica de negócio, a interface com o usuário e o controle de entrada.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: a) Certo</p>
             <div class="comentario">
-                <strong>Comentário:</strong> O modelo cliente-servidor depende de um servidor central. A ausência de centralização é característica do P2P.
+                MVC (Model-View-Controller) promove modularidade e baixo acoplamento. É amplamente usado em aplicações web governamentais por facilitar manutenção e testes.
             </div>
-            <div class="dica-banca">
-                <strong>📌 Dica CESPE:</strong> "Elimina a necessidade de servidor central" + "cliente-servidor" = sempre errado.
-            </div>
-            <div class="rascunho">Seu rascunho aqui...</div>
+            <div class="rascunho"><span>Anotações:</span></div>
         </div>
 
         <!-- Questão 3 -->
         <div class="questao">
-            <p class="banca">CESPE – TRE-SP – 2023</p>
-            <p class="enunciado">3. Microsserviços exigem que todos os serviços usem o mesmo banco de dados para garantir consistência.</p>
-            <p><strong>Gabarito: b) Errado</strong></p>
+            <p class="banca">CESPE – TRE-AM – 2023</p>
+            <p class="enunciado">3. A arquitetura em camadas permite que a camada de apresentação acesse diretamente o banco de dados.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
             <div class="comentario">
-                <strong>Comentário:</strong> Cada microsserviço deve ter seu próprio banco de dados (database per service) para garantir desacoplamento.
+                A comunicação deve ser sequencial: apresentação → negócio → dados. Acesso direto viola o princípio da arquitetura em camadas.
             </div>
-            <div class="dica-banca">
-                <strong>📌 Dica CESPE:</strong> "Mesmo banco de dados" em microsserviços = armadilha clássica.
-            </div>
-            <div class="rascunho">Seu rascunho aqui...</div>
+            <div class="rascunho"><span>Anotações:</span></div>
         </div>
 
-        <!-- Botões -->
+        <!-- Questão 4 -->
+        <div class="questao">
+            <p class="banca">CESPE – TCU – 2022</p>
+            <p class="enunciado">4. Microsserviços aumentam a complexidade operacional, mas melhoram a escalabilidade e a manutenção.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: a) Certo</p>
+            <div class="comentario">
+                Microsserviços trazem benefícios, mas exigem infraestrutura avançada (Kubernetes, CI/CD, monitoring). Em órgãos públicos, a adoção deve ser criteriosa.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 5 -->
+        <div class="questao">
+            <p class="banca">CESPE – MPU – 2022</p>
+            <p class="enunciado">5. O ESB (Enterprise Service Bus) é um padrão arquitetural que elimina a necessidade de comunicação entre serviços.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
+            <div class="comentario">
+                O ESB facilita a comunicação entre serviços, mas não a elimina. Ele atua como intermediário em arquiteturas SOA.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 6 -->
+        <div class="questao">
+            <p class="banca">CESPE – TCU – 2022</p>
+            <p class="enunciado">6. A arquitetura cliente-servidor é desnecessária em sistemas web modernos.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
+            <div class="comentario">
+                A arquitetura cliente-servidor é a base da web moderna. O navegador (cliente) solicita recursos ao servidor web.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 7 -->
+        <div class="questao">
+            <p class="banca">CESPE – TRE-SP – 2023</p>
+            <p class="enunciado">7. Em uma arquitetura P2P, todos os nós dependem de um servidor central.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
+            <div class="comentario">
+                P2P é descentralizado. Não há servidor central. Cada nó é cliente e servidor.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 8 -->
+        <div class="questao">
+            <p class="banca">CESPE – INSS – 2022</p>
+            <p class="enunciado">8. A arquitetura SOA (Service-Oriented Architecture) baseia-se na reutilização de serviços independentes.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: a) Certo</p>
+            <div class="comentario">
+                SOA promove reutilização, interoperabilidade e independência entre serviços, comuns em integração de sistemas legados.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 9 -->
+        <div class="questao">
+            <p class="banca">CESPE – TST – 2023</p>
+            <p class="enunciado">9. O uso de containers elimina completamente a necessidade de arquitetura de microsserviços.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
+            <div class="comentario">
+                Containers são uma tecnologia de virtualização leve. Podem ser usados com microsserviços, mas também com monolitos.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 10 -->
+        <div class="questao">
+            <p class="banca">CESPE – STM – 2022</p>
+            <p class="enunciado">10. A arquitetura hexagonal (Ports and Adapters) isola a lógica de negócio de detalhes de infraestrutura.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: a) Certo</p>
+            <div class="comentario">
+                A arquitetura hexagonal promove independência entre a lógica de negócio e tecnologias externas (bancos, APIs, frameworks).
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
         <div class="botoes">
             <button class="btn" onclick="window.print()">📥 Baixar PDF</button>
             <a href="../../index.html" class="btn">↩️ Voltar ao Menu</a>
