@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Engenharia de Software – 50 Questões | Marco A. Siqueira</title>
+    <title>Engenharia de Software – 10 Questões | Marco A. Siqueira</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/css/style.css">
     <style>
@@ -25,6 +25,21 @@
             margin-bottom: 15px;
             color: #2c3e50;
         }
+        .alternativas {
+            margin: 10px 0;
+        }
+        .alternativas p {
+            margin: 8px 0;
+        }
+        .gabarito {
+            font-weight: bold;
+            color: #27ae60;
+            margin: 10px 0;
+            padding: 12px;
+            background-color: #f0fff4;
+            border-left: 4px solid #27ae60;
+            border-radius: 0 8px 8px 0;
+        }
         .comentario {
             background: #f8f9fa;
             border-left: 4px solid #3498db;
@@ -33,15 +48,6 @@
             border-radius: 0 8px 8px 0;
             font-size: 0.96em;
             color: #555;
-        }
-        .dica-banca {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 12px;
-            margin: 15px 0;
-            border-radius: 0 8px 8px 0;
-            color: #856404;
-            font-size: 0.96em;
         }
         .rascunho {
             margin-top: 20px;
@@ -52,6 +58,10 @@
             font-style: italic;
             color: #777;
             background-color: #f9f9f9;
+        }
+        .rascunho span {
+            font-weight: bold;
+            color: #333;
         }
         .botoes {
             text-align: center;
@@ -78,7 +88,7 @@
     <div class="container">
         <header>
             <h1>Engenharia de Software</h1>
-            <p>50 Questões no Estilo CESPE com Gabarito e Comentários Técnicos</p>
+            <p>10 Questões no Estilo CESPE com Gabarito e Comentários Técnicos</p>
         </header>
 
         <div class="destaque">
@@ -89,45 +99,152 @@
         <div class="questao">
             <p class="banca">CESPE – TCU – 2023</p>
             <p class="enunciado">1. O modelo em cascata é adequado para projetos com requisitos frequentemente alterados.</p>
-            <p><strong>Gabarito: b) Errado</strong></p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
             <div class="comentario">
-                <strong>Comentário:</strong> O modelo cascata é rígido e linear. Projetos com requisitos instáveis exigem metodologias ágeis.
+                O modelo cascata é rígido e linear. Projetos com requisitos instáveis exigem metodologias ágeis.
             </div>
-            <div class="dica-banca">
-                <strong>📌 Dica CESPE:</strong> "Cascata" + "requisitos alterados" = sempre errado.
-            </div>
-            <div class="rascunho">Seu rascunho aqui...</div>
+            <div class="rascunho"><span>Anotações:</span></div>
         </div>
 
         <!-- Questão 2 -->
         <div class="questao">
             <p class="banca">CESPE – MPU – 2022</p>
             <p class="enunciado">2. O uso de versionamento de código é opcional em projetos com múltiplos desenvolvedores.</p>
-            <p><strong>Gabarito: b) Errado</strong></p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
             <div class="comentario">
-                <strong>Comentário:</strong> Versionamento (ex: Git) é essencial para controle de alterações, colaboração e rollback em equipes.
+                Versionamento (ex: Git) é essencial para controle de alterações, colaboração e rollback em equipes.
             </div>
-            <div class="dica-banca">
-                <strong>📌 Dica CESPE:</strong> Qualquer afirmação que minimize boas práticas (como versionamento) é provavelmente falsa.
-            </div>
-            <div class="rascunho">Seu rascunho aqui...</div>
+            <div class="rascunho"><span>Anotações:</span></div>
         </div>
 
         <!-- Questão 3 -->
         <div class="questao">
             <p class="banca">CESPE – TRE-SP – 2023</p>
             <p class="enunciado">3. Testes de segurança são desnecessários em sistemas governamentais com dados sensíveis.</p>
-            <p><strong>Gabarito: b) Errado</strong></p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
             <div class="comentario">
-                <strong>Comentário:</strong> Testes de segurança são obrigatórios em sistemas com dados sensíveis, conforme LGPD e normas técnicas.
+                Testes de segurança são obrigatórios em sistemas com dados sensíveis, conforme LGPD e normas técnicas.
             </div>
-            <div class="dica-banca">
-                <strong>📌 Dica CESPE:</strong> "Desnecessários" em segurança = armadilha clara.
-            </div>
-            <div class="rascunho">Seu rascunho aqui...</div>
+            <div class="rascunho"><span>Anotações:</span></div>
         </div>
 
-        <!-- Botões -->
+        <!-- Questão 4 -->
+        <div class="questao">
+            <p class="banca">CESPE – INSS – 2022</p>
+            <p class="enunciado">4. O processo de engenharia de requisitos deve ser concluído antes do início da codificação.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
+            <div class="comentario">
+                Em metodologias ágeis, os requisitos evoluem durante o desenvolvimento. Não há uma fase final de requisitos.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 5 -->
+        <div class="questao">
+            <p class="banca">CESPE – TST – 2023</p>
+            <p class="enunciado">5. A documentação de software é um artefato opcional em projetos ágeis.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
+            <div class="comentario">
+                O manifesto ágil valoriza a documentação funcional, não a ausência de documentação. Em TI pública, a documentação é obrigatória.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 6 -->
+        <div class="questao">
+            <p class="banca">CESPE – STM – 2022</p>
+            <p class="enunciado">6. A manutenção corretiva de software ocorre quando se adapta o sistema a um novo ambiente.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
+            <div class="comentario">
+                Manutenção corretiva corrige defeitos. Adaptação a novo ambiente é manutenção adaptativa.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 7 -->
+        <div class="questao">
+            <p class="banca">CESPE – TCE-RJ – 2023</p>
+            <p class="enunciado">7. O diagrama de casos de uso é uma ferramenta da UML usada para modelar requisitos funcionais.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: a) Certo</p>
+            <div class="comentario">
+                Casos de uso descrevem interações entre atores e o sistema, fundamentais para especificar requisitos.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 8 -->
+        <div class="questao">
+            <p class="banca">CESPE – TRE-AM – 2022</p>
+            <p class="enunciado">8. A refatoração de código altera o comportamento externo do software.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
+            <div class="comentario">
+                Refatoração melhora a estrutura interna sem alterar o comportamento externo. É essencial para manutenção.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 9 -->
+        <div class="questao">
+            <p class="banca">CESPE – INSS – 2023</p>
+            <p class="enunciado">9. O modelo espiral combina elementos do modelo em cascata e da análise de riscos.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: a) Certo</p>
+            <div class="comentario">
+                O modelo espiral itera com foco em análise de riscos, ideal para projetos de alto risco, como em órgãos públicos.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 10 -->
+        <div class="questao">
+            <p class="banca">CESPE – TCU – 2022</p>
+            <p class="enunciado">10. A engenharia de software não se aplica a sistemas legados.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
+            <div class="comentario">
+                Engenharia de software aplica-se a todo tipo de sistema, incluindo manutenção e modernização de legados.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
         <div class="botoes">
             <button class="btn" onclick="window.print()">📥 Baixar PDF</button>
             <a href="../../index.html" class="btn">↩️ Voltar ao Menu</a>
