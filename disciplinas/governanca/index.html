@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>COBIT e ITIL – 50 Questões | Marco A. Siqueira</title>
+    <title>COBIT e ITIL – 10 Questões | Marco A. Siqueira</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/css/style.css">
     <style>
@@ -25,6 +25,21 @@
             margin-bottom: 15px;
             color: #2c3e50;
         }
+        .alternativas {
+            margin: 10px 0;
+        }
+        .alternativas p {
+            margin: 8px 0;
+        }
+        .gabarito {
+            font-weight: bold;
+            color: #27ae60;
+            margin: 10px 0;
+            padding: 12px;
+            background-color: #f0fff4;
+            border-left: 4px solid #27ae60;
+            border-radius: 0 8px 8px 0;
+        }
         .comentario {
             background: #f8f9fa;
             border-left: 4px solid #3498db;
@@ -33,15 +48,6 @@
             border-radius: 0 8px 8px 0;
             font-size: 0.96em;
             color: #555;
-        }
-        .dica-banca {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 12px;
-            margin: 15px 0;
-            border-radius: 0 8px 8px 0;
-            color: #856404;
-            font-size: 0.96em;
         }
         .rascunho {
             margin-top: 20px;
@@ -52,6 +58,10 @@
             font-style: italic;
             color: #777;
             background-color: #f9f9f9;
+        }
+        .rascunho span {
+            font-weight: bold;
+            color: #333;
         }
         .botoes {
             text-align: center;
@@ -78,7 +88,7 @@
     <div class="container">
         <header>
             <h1>COBIT e ITIL (Governança de TI)</h1>
-            <p>50 Questões no Estilo CESPE com Gabarito e Comentários Técnicos</p>
+            <p>10 Questões no Estilo CESPE com Gabarito e Comentários Técnicos</p>
         </header>
 
         <div class="destaque">
@@ -89,73 +99,152 @@
         <div class="questao">
             <p class="banca">CESPE – TCU – 2023</p>
             <p class="enunciado">1. O COBIT é um framework voltado para a gestão de serviços de TI.</p>
-            <p><strong>Gabarito: b) Errado</strong></p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
             <div class="comentario">
-                <strong>Comentário:</strong> COBIT é um framework de <strong>governança de TI</strong>, não de gestão de serviços. Ele alinha TI com objetivos de negócio, gestão de riscos e valor. A gestão de serviços é foco do ITIL.
+                COBIT é de <strong>governança</strong>. ITIL é de gestão de serviços. Confundir os dois é o erro mais comum.
             </div>
-            <div class="dica-banca">
-                <strong>📌 Dica CESPE:</strong> "COBIT + gestão de serviços" = armadilha clássica. Sempre errado.
-            </div>
-            <div class="rascunho">Seu rascunho aqui...</div>
+            <div class="rascunho"><span>Anotações:</span></div>
         </div>
 
         <!-- Questão 2 -->
         <div class="questao">
             <p class="banca">CESPE – MPU – 2022</p>
-            <p class="enunciado">2. O ITIL v4 introduziu o conceito de quatro dimensões do serviço, substituindo o ciclo de vida do serviço da versão anterior.</p>
-            <p><strong>Gabarito: a) Certo</strong></p>
+            <p class="enunciado">2. O ITIL v4 introduziu o conceito de quatro dimensões do serviço.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: a) Certo</p>
             <div class="comentario">
-                <strong>Comentário:</strong> O ITIL v4 trouxe uma nova abordagem com as <strong>quatro dimensões do serviço</strong>: organizações e pessoas, informação e tecnologia, parceiros e fornecedores, e fluxos de valor e processos. Isso substituiu o modelo em ciclo de vida (desenho, transição, operação, etc.).
+                As quatro dimensões são: organizações e pessoas, informação e tecnologia, parceiros e fornecedores, e fluxos de valor e processos.
             </div>
-            <div class="dica-banca">
-                <strong>📌 Dica CESPE:</strong> ITIL v4 ≠ ITIL v3. Fique atento às mudanças estruturais.
-            </div>
-            <div class="rascunho">Seu rascunho aqui...</div>
+            <div class="rascunho"><span>Anotações:</span></div>
         </div>
 
         <!-- Questão 3 -->
         <div class="questao">
             <p class="banca">CESPE – TRE-SP – 2023</p>
-            <p class="enunciado">3. A gestão de incidentes no ITIL tem como objetivo principal identificar a causa raiz de falhas recorrentes.</p>
-            <p><strong>Gabarito: b) Errado</strong></p>
+            <p class="enunciado">3. A gestão de incidentes no ITIL tem como objetivo principal identificar a causa raiz de falhas.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
             <div class="comentario">
-                <strong>Comentário:</strong> Identificar a causa raiz é objetivo da <strong>gestão de problemas</strong>. A gestão de incidentes tem como foco <strong>restaurar o serviço o mais rápido possível</strong>, minimizando impacto.
+                Identificar a causa raiz é da <strong>gestão de problemas</strong>. A gestão de incidentes foca na restauração rápida do serviço.
             </div>
-            <div class="dica-banca">
-                <strong>📌 Dica CESPE:</strong> Confundir incidente com problema é uma das armadilhas mais frequentes.
-            </div>
-            <div class="rascunho">Seu rascunho aqui...</div>
+            <div class="rascunho"><span>Anotações:</span></div>
         </div>
 
         <!-- Questão 4 -->
         <div class="questao">
             <p class="banca">CESPE – INSS – 2022</p>
-            <p class="enunciado">4. No COBIT 2019, o domínio "Avaliar, Direcionar e Monitorar" (EDM) é responsável pela execução de processos operacionais de TI.</p>
-            <p><strong>Gabarito: b) Errado</strong></p>
+            <p class="enunciado">4. No COBIT 2019, o domínio "Avaliar, Direcionar e Monitorar" (EDM) executa processos operacionais de TI.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
             <div class="comentario">
-                <strong>Comentário:</strong> O domínio EDM trata da <strong>governança</strong> (papel do conselho e diretoria). A execução de processos operacionais é responsabilidade dos domínios "Alinhar, Planejar e Organizar" (APO) e "Construir, Adquirir e Implementar" (BAI).
+                EDM é de governança. A execução é responsabilidade dos domínios APO e BAI.
             </div>
-            <div class="dica-banca">
-                <strong>📌 Dica CESPE:</strong> "EDM executa operações" = errado. EDM governa.
-            </div>
-            <div class="rascunho">Seu rascunho aqui...</div>
+            <div class="rascunho"><span>Anotações:</span></div>
         </div>
 
         <!-- Questão 5 -->
         <div class="questao">
             <p class="banca">CESPE – TST – 2023</p>
-            <p class="enunciado">5. Um KPI (Indicador-Chave de Desempenho) deve sempre estar alinhado a um objetivo de negócio.</p>
-            <p><strong>Gabarito: a) Certo</strong></p>
+            <p class="enunciado">5. Um KPI deve sempre estar alinhado a um objetivo de negócio.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: a) Certo</p>
             <div class="comentario">
-                <strong>Comentário:</strong> A função de um KPI é medir o progresso em direção a um objetivo. Se não estiver ligado a um objetivo, perde o sentido. Tanto COBIT quanto ITIL enfatizam esse alinhamento.
+                KPIs medem o progresso em direção a objetivos. Sem alinhamento, perdem o sentido.
             </div>
-            <div class="dica-banca">
-                <strong>📌 Dica CESPE:</strong> Qualquer afirmação correta sobre alinhamento TI-negócio tende a ser certa.
-            </div>
-            <div class="rascunho">Seu rascunho aqui...</div>
+            <div class="rascunho"><span>Anotações:</span></div>
         </div>
 
-        <!-- Botões -->
+        <!-- Questão 6 -->
+        <div class="questao">
+            <p class="banca">CESPE – STM – 2022</p>
+            <p class="enunciado">6. O COBIT 2019 tem 6 domínios de governança e gestão.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: a) Certo</p>
+            <div class="comentario">
+                Os domínios são: EDM, APO, BAI, DSS, MEA e um novo focado em stakeholders.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 7 -->
+        <div class="questao">
+            <p class="banca">CESPE – TCU – 2022</p>
+            <p class="enunciado">7. O ITIL v3 é baseado em ciclos de vida do serviço.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: a) Certo</p>
+            <div class="comentario">
+                O ITIL v3 organiza os processos em cinco fases: desenho, transição, operação, melhoria contínua e estratégia.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 8 -->
+        <div class="questao">
+            <p class="banca">CESPE – TRE-AM – 2023</p>
+            <p class="enunciado">8. A gestão de mudanças no ITIL visa garantir que mudanças sejam avaliadas, autorizadas e implementadas de forma controlada.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: a) Certo</p>
+            <div class="comentario">
+                Evita falhas e interrupções. Fundamental em ambientes governamentais com alto rigor operacional.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 9 -->
+        <div class="questao">
+            <p class="banca">CESPE – INSS – 2022</p>
+            <p class="enunciado">9. O COBIT pode ser usado para alinhar TI com objetivos de negócio.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: a) Certo</p>
+            <div class="comentario">
+                Um dos principais objetivos do COBIT é o alinhamento estratégico entre TI e negócio.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 10 -->
+        <div class="questao">
+            <p class="banca">CESPE – TST – 2023</p>
+            <p class="enunciado">10. O ITIL é um padrão internacional de governança de TI.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
+            <div class="comentario">
+                ITIL é de <strong>gestão de serviços</strong>. Governança de TI é foco do COBIT.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
         <div class="botoes">
             <button class="btn" onclick="window.print()">📥 Baixar PDF</button>
             <a href="../../index.html" class="btn">↩️ Voltar ao Menu</a>
