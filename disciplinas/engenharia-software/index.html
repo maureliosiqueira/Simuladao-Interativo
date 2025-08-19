@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <meta charset="UTF-8">
     <title>Engenharia de Software – 10 Questões | Marco A. Siqueira</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,11 +28,29 @@
             margin-bottom: 15px;
             color: #2c3e50;
         }
-        .alternativas {
-            margin: 10px 0;
-        }
         .alternativas p {
             margin: 8px 0;
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .alternativas p:hover {
+            background-color: #f1f3f5;
+            border-color: #007bff;
+        }
+        .alternativa-certa {
+            background-color: #d4edda !important;
+            border-color: #27ae60 !important;
+            color: #155724;
+            font-weight: bold;
+        }
+        .alternativa-errada {
+            background-color: #f8d7da !important;
+            border-color: #c82333 !important;
+            color: #721c24;
+            font-weight: bold;
         }
         .gabarito {
             font-weight: bold;
@@ -39,6 +60,7 @@
             background-color: #f0fff4;
             border-left: 4px solid #27ae60;
             border-radius: 0 8px 8px 0;
+            display: none;
         }
         .comentario {
             background: #f8f9fa;
@@ -48,6 +70,7 @@
             border-radius: 0 8px 8px 0;
             font-size: 0.96em;
             color: #555;
+            display: none;
         }
         .rascunho {
             margin-top: 20px;
@@ -88,11 +111,11 @@
     <div class="container">
         <header>
             <h1>Engenharia de Software</h1>
-            <p>10 Questões no Estilo CESPE com Gabarito e Comentários Técnicos</p>
+            <p>10 Questões no Estilo CESPE com Feedback Imediato</p>
         </header>
 
         <div class="destaque">
-            ✍️ Use o espaço de <strong>rascunho após cada questão</strong> para anotar suas reflexões e revisar com mais eficácia.
+            ✍️ Clique na alternativa para ver o gabarito. O simulado começa do zero a cada acesso.
         </div>
 
         <!-- Questão 1 -->
@@ -100,10 +123,10 @@
             <p class="banca">CESPE – TCU – 2023</p>
             <p class="enunciado">1. O modelo em cascata é adequado para projetos com requisitos frequentemente alterados.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, false, 1)">a) Certo</p>
+                <p onclick="marcar(this, true, 1)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: b) Errado</p>
+            <p class="gabarito">✅ Gabarito: b) Errado</p>
             <div class="comentario">
                 O modelo cascata é rígido e linear. Projetos com requisitos instáveis exigem metodologias ágeis.
             </div>
@@ -115,10 +138,10 @@
             <p class="banca">CESPE – MPU – 2022</p>
             <p class="enunciado">2. O uso de versionamento de código é opcional em projetos com múltiplos desenvolvedores.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, false, 2)">a) Certo</p>
+                <p onclick="marcar(this, true, 2)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: b) Errado</p>
+            <p class="gabarito">✅ Gabarito: b) Errado</p>
             <div class="comentario">
                 Versionamento (ex: Git) é essencial para controle de alterações, colaboração e rollback em equipes.
             </div>
@@ -130,10 +153,10 @@
             <p class="banca">CESPE – TRE-SP – 2023</p>
             <p class="enunciado">3. Testes de segurança são desnecessários em sistemas governamentais com dados sensíveis.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, false, 3)">a) Certo</p>
+                <p onclick="marcar(this, true, 3)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: b) Errado</p>
+            <p class="gabarito">✅ Gabarito: b) Errado</p>
             <div class="comentario">
                 Testes de segurança são obrigatórios em sistemas com dados sensíveis, conforme LGPD e normas técnicas.
             </div>
@@ -145,10 +168,10 @@
             <p class="banca">CESPE – INSS – 2022</p>
             <p class="enunciado">4. O processo de engenharia de requisitos deve ser concluído antes do início da codificação.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, false, 4)">a) Certo</p>
+                <p onclick="marcar(this, true, 4)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: b) Errado</p>
+            <p class="gabarito">✅ Gabarito: b) Errado</p>
             <div class="comentario">
                 Em metodologias ágeis, os requisitos evoluem durante o desenvolvimento. Não há uma fase final de requisitos.
             </div>
@@ -160,10 +183,10 @@
             <p class="banca">CESPE – TST – 2023</p>
             <p class="enunciado">5. A documentação de software é um artefato opcional em projetos ágeis.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, false, 5)">a) Certo</p>
+                <p onclick="marcar(this, true, 5)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: b) Errado</p>
+            <p class="gabarito">✅ Gabarito: b) Errado</p>
             <div class="comentario">
                 O manifesto ágil valoriza a documentação funcional, não a ausência de documentação. Em TI pública, a documentação é obrigatória.
             </div>
@@ -175,10 +198,10 @@
             <p class="banca">CESPE – STM – 2022</p>
             <p class="enunciado">6. A manutenção corretiva de software ocorre quando se adapta o sistema a um novo ambiente.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, false, 6)">a) Certo</p>
+                <p onclick="marcar(this, true, 6)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: b) Errado</p>
+            <p class="gabarito">✅ Gabarito: b) Errado</p>
             <div class="comentario">
                 Manutenção corretiva corrige defeitos. Adaptação a novo ambiente é manutenção adaptativa.
             </div>
@@ -190,10 +213,10 @@
             <p class="banca">CESPE – TCE-RJ – 2023</p>
             <p class="enunciado">7. O diagrama de casos de uso é uma ferramenta da UML usada para modelar requisitos funcionais.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, true, 7)">a) Certo</p>
+                <p onclick="marcar(this, false, 7)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: a) Certo</p>
+            <p class="gabarito">✅ Gabarito: a) Certo</p>
             <div class="comentario">
                 Casos de uso descrevem interações entre atores e o sistema, fundamentais para especificar requisitos.
             </div>
@@ -205,10 +228,10 @@
             <p class="banca">CESPE – TRE-AM – 2022</p>
             <p class="enunciado">8. A refatoração de código altera o comportamento externo do software.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, false, 8)">a) Certo</p>
+                <p onclick="marcar(this, true, 8)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: b) Errado</p>
+            <p class="gabarito">✅ Gabarito: b) Errado</p>
             <div class="comentario">
                 Refatoração melhora a estrutura interna sem alterar o comportamento externo. É essencial para manutenção.
             </div>
@@ -220,10 +243,10 @@
             <p class="banca">CESPE – INSS – 2023</p>
             <p class="enunciado">9. O modelo espiral combina elementos do modelo em cascata e da análise de riscos.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, true, 9)">a) Certo</p>
+                <p onclick="marcar(this, false, 9)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: a) Certo</p>
+            <p class="gabarito">✅ Gabarito: a) Certo</p>
             <div class="comentario">
                 O modelo espiral itera com foco em análise de riscos, ideal para projetos de alto risco, como em órgãos públicos.
             </div>
@@ -235,10 +258,10 @@
             <p class="banca">CESPE – TCU – 2022</p>
             <p class="enunciado">10. A engenharia de software não se aplica a sistemas legados.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, false, 10)">a) Certo</p>
+                <p onclick="marcar(this, true, 10)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: b) Errado</p>
+            <p class="gabarito">✅ Gabarito: b) Errado</p>
             <div class="comentario">
                 Engenharia de software aplica-se a todo tipo de sistema, incluindo manutenção e modernização de legados.
             </div>
@@ -256,5 +279,43 @@
             <a href="https://app.hotmart.com/products/producer" target="_blank">Materiais Completos</a>
         </footer>
     </div>
+
+    <script>
+        function marcar(elemento, estaCerto, questaoId) {
+            const alternativas = elemento.parentElement.querySelectorAll('p');
+            alternativas.forEach(el => {
+                el.style.fontWeight = 'normal';
+                el.style.backgroundColor = '#f8f9fa';
+                el.style.borderColor = '#e9ecef';
+            });
+
+            if (estaCerto) {
+                elemento.classList.add('alternativa-certa');
+            } else {
+                elemento.classList.add('alternativa-errada');
+            }
+
+            const gabarito = elemento.parentElement.nextElementSibling;
+            const comentario = gabarito.nextElementSibling;
+            gabarito.style.display = 'block';
+            comentario.style.display = 'block';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.gabarito, .comentario').forEach(el => {
+                el.style.display = 'none';
+            });
+            document.querySelectorAll('.alternativas p').forEach(el => {
+                el.classList.remove('alternativa-certa', 'alternativa-errada');
+            });
+            window.scrollTo(0, 0);
+        });
+
+        window.onpageshow = function(event) {
+            if (event.persisted) {
+                window.location.reload();
+            }
+        };
+    </script>
 </body>
 </html>
