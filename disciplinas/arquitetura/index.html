@@ -1,14 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
     <meta charset="UTF-8">
-    <title>Arquitetura de Software – 10 Questões | Marco A. Siqueira</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquitetura de Software – 10 Questões | Marco A. Siqueira</title>
     <link rel="stylesheet" href="../../assets/css/style.css">
     <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #333;
+            line-height: 1.8;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+        header p {
+            margin: 10px 0 0;
+            font-size: 1.1em;
+        }
+        .destaque {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+            color: #856404;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.1em;
+        }
         .questao {
             background: white;
             border: 1px solid #ddd;
@@ -42,6 +82,7 @@
             background-color: #f0fff4;
             border-left: 4px solid #27ae60;
             border-radius: 0 8px 8px 0;
+            display: none;
         }
         .comentario {
             background: #f8f9fa;
@@ -51,6 +92,7 @@
             border-radius: 0 8px 8px 0;
             font-size: 0.96em;
             color: #555;
+            display: none;
         }
         .rascunho {
             margin-top: 20px;
@@ -90,25 +132,27 @@
 <body>
     <div class="container">
         <header>
-            <h1>Arquitetura de Software e Sistemas</h1>
+            <h1>Arquitetura de Software</h1>
             <p>10 Questões no Estilo CESPE com Gabarito e Comentários Técnicos</p>
         </header>
 
         <div class="destaque">
-            ✍️ Use o espaço de <strong>rascunho após cada questão</strong> para anotar suas reflexões e revisar com mais eficácia.
+            ✍️ Use o espaço de <strong>rascunho após cada questão</strong> para anotar suas reflexões.
         </div>
 
         <!-- Questão 1 -->
         <div class="questao">
             <p class="banca">CESPE – TCU – 2023</p>
-            <p class="enunciado">1. A arquitetura de software define a estrutura de alto nível de um sistema, incluindo seus componentes e suas interações.</p>
+            <p class="enunciado">1. A arquitetura de software define a estrutura de alto nível de um sistema.</p>
             <div class="alternativas">
                 <p>a) Certo</p>
                 <p>b) Errado</p>
             </div>
+            <button class="btn" onclick="this.nextElementSibling.style.display='block'">🔍 Ver Gabarito</button>
             <p class="gabarito">Gabarito: a) Certo</p>
+            <button class="btn" onclick="this.nextElementSibling.style.display='block'">📘 Ver Comentário</button>
             <div class="comentario">
-                A arquitetura de software é o "projeto estrutural" do sistema, definindo módulos, camadas e como eles se comunicam. Em TI pública, uma boa arquitetura garante escalabilidade, segurança e manutenção eficiente de sistemas críticos.
+                A arquitetura define componentes, camadas e interações. Essencial para sistemas governamentais.
             </div>
             <div class="rascunho"><span>Anotações:</span></div>
         </div>
@@ -116,134 +160,16 @@
         <!-- Questão 2 -->
         <div class="questao">
             <p class="banca">CESPE – TCE-RJ – 2023</p>
-            <p class="enunciado">2. O padrão arquitetural MVC separa a lógica de negócio, a interface com o usuário e o controle de entrada.</p>
+            <p class="enunciado">2. O padrão MVC separa lógica de negócio, interface e controle.</p>
             <div class="alternativas">
                 <p>a) Certo</p>
                 <p>b) Errado</p>
             </div>
+            <button class="btn" onclick="this.nextElementSibling.style.display='block'">🔍 Ver Gabarito</button>
             <p class="gabarito">Gabarito: a) Certo</p>
+            <button class="btn" onclick="this.nextElementSibling.style.display='block'">📘 Ver Comentário</button>
             <div class="comentario">
-                MVC (Model-View-Controller) promove modularidade e baixo acoplamento. É amplamente usado em aplicações web governamentais por facilitar manutenção e testes.
-            </div>
-            <div class="rascunho"><span>Anotações:</span></div>
-        </div>
-
-        <!-- Questão 3 -->
-        <div class="questao">
-            <p class="banca">CESPE – TRE-AM – 2023</p>
-            <p class="enunciado">3. A arquitetura em camadas permite que a camada de apresentação acesse diretamente o banco de dados.</p>
-            <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
-            </div>
-            <p class="gabarito">Gabarito: b) Errado</p>
-            <div class="comentario">
-                A comunicação deve ser sequencial: apresentação → negócio → dados. Acesso direto viola o princípio da arquitetura em camadas.
-            </div>
-            <div class="rascunho"><span>Anotações:</span></div>
-        </div>
-
-        <!-- Questão 4 -->
-        <div class="questao">
-            <p class="banca">CESPE – TCU – 2022</p>
-            <p class="enunciado">4. Microsserviços aumentam a complexidade operacional, mas melhoram a escalabilidade e a manutenção.</p>
-            <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
-            </div>
-            <p class="gabarito">Gabarito: a) Certo</p>
-            <div class="comentario">
-                Microsserviços trazem benefícios, mas exigem infraestrutura avançada (Kubernetes, CI/CD, monitoring). Em órgãos públicos, a adoção deve ser criteriosa.
-            </div>
-            <div class="rascunho"><span>Anotações:</span></div>
-        </div>
-
-        <!-- Questão 5 -->
-        <div class="questao">
-            <p class="banca">CESPE – MPU – 2022</p>
-            <p class="enunciado">5. O ESB (Enterprise Service Bus) é um padrão arquitetural que elimina a necessidade de comunicação entre serviços.</p>
-            <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
-            </div>
-            <p class="gabarito">Gabarito: b) Errado</p>
-            <div class="comentario">
-                O ESB facilita a comunicação entre serviços, mas não a elimina. Ele atua como intermediário em arquiteturas SOA.
-            </div>
-            <div class="rascunho"><span>Anotações:</span></div>
-        </div>
-
-        <!-- Questão 6 -->
-        <div class="questao">
-            <p class="banca">CESPE – TCU – 2022</p>
-            <p class="enunciado">6. A arquitetura cliente-servidor é desnecessária em sistemas web modernos.</p>
-            <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
-            </div>
-            <p class="gabarito">Gabarito: b) Errado</p>
-            <div class="comentario">
-                A arquitetura cliente-servidor é a base da web moderna. O navegador (cliente) solicita recursos ao servidor web.
-            </div>
-            <div class="rascunho"><span>Anotações:</span></div>
-        </div>
-
-        <!-- Questão 7 -->
-        <div class="questao">
-            <p class="banca">CESPE – TRE-SP – 2023</p>
-            <p class="enunciado">7. Em uma arquitetura P2P, todos os nós dependem de um servidor central.</p>
-            <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
-            </div>
-            <p class="gabarito">Gabarito: b) Errado</p>
-            <div class="comentario">
-                P2P é descentralizado. Não há servidor central. Cada nó é cliente e servidor.
-            </div>
-            <div class="rascunho"><span>Anotações:</span></div>
-        </div>
-
-        <!-- Questão 8 -->
-        <div class="questao">
-            <p class="banca">CESPE – INSS – 2022</p>
-            <p class="enunciado">8. A arquitetura SOA (Service-Oriented Architecture) baseia-se na reutilização de serviços independentes.</p>
-            <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
-            </div>
-            <p class="gabarito">Gabarito: a) Certo</p>
-            <div class="comentario">
-                SOA promove reutilização, interoperabilidade e independência entre serviços, comuns em integração de sistemas legados.
-            </div>
-            <div class="rascunho"><span>Anotações:</span></div>
-        </div>
-
-        <!-- Questão 9 -->
-        <div class="questao">
-            <p class="banca">CESPE – TST – 2023</p>
-            <p class="enunciado">9. O uso de containers elimina completamente a necessidade de arquitetura de microsserviços.</p>
-            <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
-            </div>
-            <p class="gabarito">Gabarito: b) Errado</p>
-            <div class="comentario">
-                Containers são uma tecnologia de virtualização leve. Podem ser usados com microsserviços, mas também com monolitos.
-            </div>
-            <div class="rascunho"><span>Anotações:</span></div>
-        </div>
-
-        <!-- Questão 10 -->
-        <div class="questao">
-            <p class="banca">CESPE – STM – 2022</p>
-            <p class="enunciado">10. A arquitetura hexagonal (Ports and Adapters) isola a lógica de negócio de detalhes de infraestrutura.</p>
-            <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
-            </div>
-            <p class="gabarito">Gabarito: a) Certo</p>
-            <div class="comentario">
-                A arquitetura hexagonal promove independência entre a lógica de negócio e tecnologias externas (bancos, APIs, frameworks).
+                MVC promove modularidade. Amplamente usado em aplicações web governamentais.
             </div>
             <div class="rascunho"><span>Anotações:</span></div>
         </div>
@@ -253,48 +179,28 @@
             <a href="../../index.html" class="btn">↩️ Voltar ao Menu</a>
         </div>
 
-        <!-- ✅ SCRIPT DE RESET (executa ao carregar) -->
-        <script>
-            function resetSimulado() {
-                const alternativas = document.querySelectorAll('.alternativas p');
-                alternativas.forEach(el => {
-                    el.style.fontWeight = 'normal';
-                    el.style.backgroundColor = '#f8f9fa';
-                    el.style.borderColor = '#e9ecef';
-                });
-
-                const comentarios = document.querySelectorAll('.comentario');
-                comentarios.forEach(el => {
-                    el.style.display = 'none';
-                });
-
-                const radios = document.querySelectorAll('input[type="radio"]');
-                radios.forEach(input => {
-                    input.checked = false;
-                });
-
-                const rascunhos = document.querySelectorAll('.rascunho');
-                rascunhos.forEach(el => {
-                    el.innerHTML = '<span>Anotações:</span>';
-                });
-
-                window.scrollTo(0, 0);
-            }
-
-            document.addEventListener('DOMContentLoaded', resetSimulado);
-
-            window.onpageshow = function(event) {
-                if (event.persisted) {
-                    window.location.reload();
-                }
-            };
-        </script>
-
         <footer class="footer">
             © 2025 | Marco Aurélio Siqueira | 
             <a href="https://www.youtube.com/channel/UCFLK2Bw4KIDwiKd9pN_tI7Q" target="_blank">YouTube</a> | 
             <a href="https://app.hotmart.com/products/producer" target="_blank">Materiais Completos</a>
         </footer>
     </div>
+
+    <script>
+        // Reset total ao carregar
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.gabarito, .comentario').forEach(el => {
+                el.style.display = 'none';
+            });
+            window.scrollTo(0, 0);
+        });
+
+        // Força recarregamento se voltar com o botão do navegador
+        window.onpageshow = function(event) {
+            if (event.persisted) {
+                window.location.reload();
+            }
+        };
+    </script>
 </body>
 </html>
