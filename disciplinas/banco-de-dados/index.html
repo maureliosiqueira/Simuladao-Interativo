@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Banco de Dados – 50 Questões | Marco A. Siqueira</title>
+    <title>Banco de Dados – 10 Questões | Marco A. Siqueira</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/css/style.css">
     <style>
@@ -25,6 +25,21 @@
             margin-bottom: 15px;
             color: #2c3e50;
         }
+        .alternativas {
+            margin: 10px 0;
+        }
+        .alternativas p {
+            margin: 8px 0;
+        }
+        .gabarito {
+            font-weight: bold;
+            color: #27ae60;
+            margin: 10px 0;
+            padding: 12px;
+            background-color: #f0fff4;
+            border-left: 4px solid #27ae60;
+            border-radius: 0 8px 8px 0;
+        }
         .comentario {
             background: #f8f9fa;
             border-left: 4px solid #3498db;
@@ -33,15 +48,6 @@
             border-radius: 0 8px 8px 0;
             font-size: 0.96em;
             color: #555;
-        }
-        .dica-banca {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 12px;
-            margin: 15px 0;
-            border-radius: 0 8px 8px 0;
-            color: #856404;
-            font-size: 0.96em;
         }
         .rascunho {
             margin-top: 20px;
@@ -52,6 +58,10 @@
             font-style: italic;
             color: #777;
             background-color: #f9f9f9;
+        }
+        .rascunho span {
+            font-weight: bold;
+            color: #333;
         }
         .botoes {
             text-align: center;
@@ -78,7 +88,7 @@
     <div class="container">
         <header>
             <h1>Banco de Dados</h1>
-            <p>50 Questões no Estilo CESPE com Gabarito e Comentários Técnicos</p>
+            <p>10 Questões no Estilo CESPE com Gabarito e Comentários Técnicos</p>
         </header>
 
         <div class="destaque">
@@ -89,73 +99,152 @@
         <div class="questao">
             <p class="banca">CESPE – TCU – 2022</p>
             <p class="enunciado">1. A normalização em banco de dados tem como objetivo principal aumentar a redundância de dados para melhorar o desempenho.</p>
-            <p><strong>Gabarito: b) Errado</strong></p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
             <div class="comentario">
-                <strong>Comentário:</strong> O objetivo da normalização é <strong>reduzir a redundância</strong> e melhorar a integridade dos dados. A desnormalização pode ser usada para desempenho, mas não é o foco da normalização.
+                O objetivo da normalização é <strong>reduzir a redundância</strong> e melhorar a integridade dos dados. A desnormalização pode ser usada para desempenho, mas não é o foco da normalização.
             </div>
-            <div class="dica-banca">
-                <strong>📌 Dica CESPE:</strong> "Aumentar a redundância" em normalização = sempre errado.
-            </div>
-            <div class="rascunho">Seu rascunho aqui...</div>
+            <div class="rascunho"><span>Anotações:</span></div>
         </div>
 
         <!-- Questão 2 -->
         <div class="questao">
             <p class="banca">CESPE – TRE-SP – 2023</p>
             <p class="enunciado">2. Um índice em um banco de dados relacional garante a integridade referencial entre tabelas.</p>
-            <p><strong>Gabarito: b) Errado</strong></p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
             <div class="comentario">
-                <strong>Comentário:</strong> Índices <strong>aceleram consultas</strong>, mas não garantem integridade. A integridade referencial é garantida por <strong>chaves estrangeiras (foreign keys)</strong>.
+                Índices <strong>aceleram consultas</strong>, mas não garantem integridade. A integridade referencial é garantida por <strong>chaves estrangeiras (foreign keys)</strong>.
             </div>
-            <div class="dica-banca">
-                <strong>📌 Dica CESPE:</strong> Confundir índice com chave estrangeira é uma armadilha clássica.
-            </div>
-            <div class="rascunho">Seu rascunho aqui...</div>
+            <div class="rascunho"><span>Anotações:</span></div>
         </div>
 
         <!-- Questão 3 -->
         <div class="questao">
             <p class="banca">CESPE – MPU – 2022</p>
             <p class="enunciado">3. Em uma transação de banco de dados, a propriedade de isolamento garante que, mesmo em caso de falha, o banco retorne a um estado consistente.</p>
-            <p><strong>Gabarito: b) Errado</strong></p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
             <div class="comentario">
-                <strong>Comentário:</strong> Isolamento refere-se à <strong>execução concorrente</strong> de transações. A propriedade que garante retorno a um estado consistente após falha é a <strong>durabilidade (D de ACID)</strong>.
+                Isolamento refere-se à <strong>execução concorrente</strong> de transações. A propriedade que garante retorno a um estado consistente após falha é a <strong>durabilidade (D de ACID)</strong>.
             </div>
-            <div class="dica-banca">
-                <strong>📌 Dica CESPE:</strong> "Isolamento" + "falha" = armadilha. Confundir isolamento com durabilidade é comum.
-            </div>
-            <div class="rascunho">Seu rascunho aqui...</div>
+            <div class="rascunho"><span>Anotações:</span></div>
         </div>
 
         <!-- Questão 4 -->
         <div class="questao">
             <p class="banca">CESPE – TST – 2023</p>
             <p class="enunciado">4. O comando DELETE em SQL remove permanentemente uma tabela do banco de dados.</p>
-            <p><strong>Gabarito: b) Errado</strong></p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
             <div class="comentario">
-                <strong>Comentário:</strong> O comando <strong>DELETE</strong> remove <strong>linhas</strong> de uma tabela. Para remover a tabela inteira, usa-se <strong>DROP TABLE</strong>.
+                O comando <strong>DELETE</strong> remove <strong>linhas</strong> de uma tabela. Para remover a tabela inteira, usa-se <strong>DROP TABLE</strong>.
             </div>
-            <div class="dica-banca">
-                <strong>📌 Dica CESPE:</strong> "DELETE remove tabela" = sempre errado.
-            </div>
-            <div class="rascunho">Seu rascunho aqui...</div>
+            <div class="rascunho"><span>Anotações:</span></div>
         </div>
 
         <!-- Questão 5 -->
         <div class="questao">
             <p class="banca">CESPE – INSS – 2022</p>
             <p class="enunciado">5. O modelo de dados NoSQL é sempre mais adequado que o relacional para aplicações governamentais com dados estruturados.</p>
-            <p><strong>Gabarito: b) Errado</strong></p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
             <div class="comentario">
-                <strong>Comentário:</strong> Bancos relacionais são mais adequados para dados estruturados com integridade e transações ACID. NoSQL é ideal para dados não estruturados ou alta escalabilidade.
+                Bancos relacionais são mais adequados para dados estruturados com integridade e transações ACID. NoSQL é ideal para dados não estruturados ou alta escalabilidade.
             </div>
-            <div class="dica-banca">
-                <strong>📌 Dica CESPE:</strong> Generalizações como "sempre mais adequado" costumam ser falsas.
-            </div>
-            <div class="rascunho">Seu rascunho aqui...</div>
+            <div class="rascunho"><span>Anotações:</span></div>
         </div>
 
-        <!-- Botões -->
+        <!-- Questão 6 -->
+        <div class="questao">
+            <p class="banca">CESPE – TCU – 2023</p>
+            <p class="enunciado">6. A normalização elimina completamente a redundância de dados em um banco de dados.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
+            <div class="comentario">
+                A normalização <strong>reduz</strong> a redundância, mas não a elimina completamente. Algumas redundâncias podem ser mantidas para desempenho (desnormalização).
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 7 -->
+        <div class="questao">
+            <p class="banca">CESPE – TRE-SP – 2022</p>
+            <p class="enunciado">7. Uma view em SQL é um objeto que armazena dados fisicamente no banco de dados.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
+            <div class="comentario">
+                Uma view é uma <strong>consulta virtual</strong> que não armazena dados fisicamente. Ela exibe dados de uma ou mais tabelas com base em uma consulta SQL.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 8 -->
+        <div class="questao">
+            <p class="banca">CESPE – MPU – 2023</p>
+            <p class="enunciado">8. O comando TRUNCATE em SQL remove todas as linhas de uma tabela, mas mantém sua estrutura.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: a) Certo</p>
+            <div class="comentario">
+                TRUNCATE é um comando DDL que remove todos os dados da tabela de forma rápida, mas mantém a estrutura (colunas, índices, etc.).
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 9 -->
+        <div class="questao">
+            <p class="banca">CESPE – INSS – 2022</p>
+            <p class="enunciado">9. O JOIN em SQL é usado para combinar linhas de duas ou mais tabelas com base em uma coluna relacionada.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: a) Certo</p>
+            <div class="comentario">
+                JOIN é essencial para consultar dados relacionais. Tipos comuns: INNER JOIN, LEFT JOIN, RIGHT JOIN.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 10 -->
+        <div class="questao">
+            <p class="banca">CESPE – TST – 2023</p>
+            <p class="enunciado">10. A cláusula HAVING em SQL é usada para filtrar grupos após a agregação, enquanto WHERE filtra linhas antes.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: a) Certo</p>
+            <div class="comentario">
+                HAVING é usado com GROUP BY para filtrar resultados agregados. WHERE filtra linhas individuais antes da agregação.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
         <div class="botoes">
             <button class="btn" onclick="window.print()">📥 Baixar PDF</button>
             <a href="../../index.html" class="btn">↩️ Voltar ao Menu</a>
