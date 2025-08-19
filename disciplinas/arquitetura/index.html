@@ -256,5 +256,66 @@
             <a href="https://app.hotmart.com/products/producer" target="_blank">Materiais Completos</a>
         </footer>
     </div>
+        <!-- Conteúdo das questões -->
+        <div class="questao">
+            <p class="banca">CESPE – TCU – 2023</p>
+            <p class="enunciado">1. A arquitetura em camadas permite que a camada de apresentação acesse diretamente o banco de dados.</p>
+            ...
+        </div>
+
+        <!-- Botões -->
+        <div class="botoes">
+            <button class="btn" onclick="window.print()">📥 Baixar PDF</button>
+            <a href="../../index.html" class="btn">↩️ Voltar ao Menu</a>
+        </div>
+
+        <!-- ✅ SCRIPT DE RESET -->
+        <script>
+            function resetSimulado() {
+                const alternativas = document.querySelectorAll('.alternativa');
+                alternativas.forEach(el => {
+                    el.classList.remove('correta');
+                    el.classList.remove('errada');
+                    el.style.fontWeight = 'normal';
+                    el.style.backgroundColor = '#f8f9fa';
+                    el.style.borderColor = '#e9ecef';
+                });
+
+                const feedbacks = document.querySelectorAll('.feedback');
+                feedbacks.forEach(el => {
+                    el.style.display = 'none';
+                });
+
+                const radios = document.querySelectorAll('input[type="radio"]');
+                radios.forEach(input => {
+                    input.checked = false;
+                });
+
+                const rascunhos = document.querySelectorAll('.rascunho');
+                rascunhos.forEach(el => {
+                    el.innerHTML = '<span>Anotações:</span>';
+                });
+
+                window.scrollTo(0, 0);
+            }
+
+            document.addEventListener('DOMContentLoaded', resetSimulado);
+
+            window.onpageshow = function(event) {
+                if (event.persisted) {
+                    window.location.reload();
+                }
+            };
+        </script>
+
+        <footer class="footer">
+            © 2025 | Marco Aurélio Siqueira | 
+            <a href="https://www.youtube.com/channel/UCFLK2Bw4KIDwiKd9pN_tI7Q" target="_blank">YouTube</a> | 
+            <a href="https://app.hotmart.com/products/producer" target="_blank">Materiais Completos</a>
+        </footer>
+    </div>
+</body>  <!-- ← Só depois disso fecha o </body> -->
+</html>
+    
 </body>
 </html>
