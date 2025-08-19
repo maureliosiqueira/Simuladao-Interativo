@@ -28,11 +28,29 @@
             margin-bottom: 15px;
             color: #2c3e50;
         }
-        .alternativas {
-            margin: 10px 0;
-        }
         .alternativas p {
             margin: 8px 0;
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .alternativas p:hover {
+            background-color: #f1f3f5;
+            border-color: #007bff;
+        }
+        .alternativa-certa {
+            background-color: #d4edda !important;
+            border-color: #27ae60 !important;
+            color: #155724;
+            font-weight: bold;
+        }
+        .alternativa-errada {
+            background-color: #f8d7da !important;
+            border-color: #c82333 !important;
+            color: #721c24;
+            font-weight: bold;
         }
         .gabarito {
             font-weight: bold;
@@ -42,6 +60,7 @@
             background-color: #f0fff4;
             border-left: 4px solid #27ae60;
             border-radius: 0 8px 8px 0;
+            display: none;
         }
         .comentario {
             background: #f8f9fa;
@@ -51,6 +70,7 @@
             border-radius: 0 8px 8px 0;
             font-size: 0.96em;
             color: #555;
+            display: none;
         }
         .rascunho {
             margin-top: 20px;
@@ -91,11 +111,11 @@
     <div class="container">
         <header>
             <h1>Cloud Computing</h1>
-            <p>10 Questões no Estilo CESPE com Gabarito e Comentários Técnicos</p>
+            <p>10 Questões no Estilo CESPE com Feedback Imediato</p>
         </header>
 
         <div class="destaque">
-            ✍️ Use o espaço de <strong>rascunho após cada questão</strong> para anotar suas reflexões e revisar com mais eficácia.
+            ✍️ Clique na alternativa para ver o gabarito. O simulado começa do zero a cada acesso.
         </div>
 
         <!-- Questão 1 -->
@@ -103,10 +123,10 @@
             <p class="banca">CESPE – TCU – 2023</p>
             <p class="enunciado">1. O modelo de nuvem pública é sempre menos seguro que a infraestrutura local.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, false, 1)">a) Certo</p>
+                <p onclick="marcar(this, true, 1)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: b) Errado</p>
+            <p class="gabarito">✅ Gabarito: b) Errado</p>
             <div class="comentario">
                 Nuvens públicas (como AWS, Azure) possuem níveis de segurança, auditoria e conformidade muitas vezes superiores aos ambientes locais. A segurança depende da configuração, não do modelo.
             </div>
@@ -116,185 +136,4 @@
         <!-- Questão 2 -->
         <div class="questao">
             <p class="banca">CESPE – MPU – 2022</p>
-            <p class="enunciado">2. A elasticidade em nuvem permite que recursos sejam automaticamente ajustados conforme a demanda.</p>
-            <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
-            </div>
-            <p class="gabarito">Gabarito: a) Certo</p>
-            <div class="comentario">
-                Elasticidade é um dos pilares da nuvem. Permite escalar recursos (CPU, memória, armazenamento) automaticamente com base no uso.
-            </div>
-            <div class="rascunho"><span>Anotações:</span></div>
-        </div>
-
-        <!-- Questão 3 -->
-        <div class="questao">
-            <p class="banca">CESPE – TRE-SP – 2023</p>
-            <p class="enunciado">3. O SaaS (Software como Serviço) elimina a necessidade de manutenção de infraestrutura pelo usuário.</p>
-            <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
-            </div>
-            <p class="gabarito">Gabarito: a) Certo</p>
-            <div class="comentario">
-                No SaaS, o provedor gerencia toda a infraestrutura, plataforma e aplicação. O usuário acessa via navegador, sem preocupação com atualizações ou servidores.
-            </div>
-            <div class="rascunho"><span>Anotações:</span></div>
-        </div>
-
-        <!-- Questão 4 -->
-        <div class="questao">
-            <p class="banca">CESPE – INSS – 2022</p>
-            <p class="enunciado">4. A nuvem privada é sempre fisicamente localizada nas instalações do contratante.</p>
-            <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
-            </div>
-            <p class="gabarito">Gabarito: b) Errado</p>
-            <div class="comentario">
-                Nuvem privada é dedicada a um único cliente, mas pode estar fisicamente hospedada em datacenter do provedor (nuvem privada gerenciada).
-            </div>
-            <div class="rascunho"><span>Anotações:</span></div>
-        </div>
-
-        <!-- Questão 5 -->
-        <div class="questao">
-            <p class="banca">CESPE – TST – 2023</p>
-            <p class="enunciado">5. O IaaS (Infraestrutura como Serviço) permite ao usuário gerenciar o sistema operacional, mas não a rede física.</p>
-            <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
-            </div>
-            <p class="gabarito">Gabarito: a) Certo</p>
-            <div class="comentario">
-                No IaaS, o provedor gerencia hardware, rede física e virtualização. O usuário gerencia SO, aplicações, armazenamento e rede lógica.
-            </div>
-            <div class="rascunho"><span>Anotações:</span></div>
-        </div>
-
-        <!-- Questão 6 -->
-        <div class="questao">
-            <p class="banca">CESPE – STM – 2022</p>
-            <p class="enunciado">6. A computação em nuvem elimina completamente a necessidade de backup local.</p>
-            <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
-            </div>
-            <p class="gabarito">Gabarito: b) Errado</p>
-            <div class="comentario">
-                Backups em nuvem são comuns, mas a redundância e a estratégia de recuperação de desastres podem incluir soluções locais ou híbridas.
-            </div>
-            <div class="rascunho"><span>Anotações:</span></div>
-        </div>
-
-        <!-- Questão 7 -->
-        <div class="questao">
-            <p class="banca">CESPE – TCU – 2022</p>
-            <p class="enunciado">7. O modelo híbrido combina nuvem pública e privada, permitindo maior flexibilidade.</p>
-            <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
-            </div>
-            <p class="gabarito">Gabarito: a) Certo</p>
-            <div class="comentario">
-                A nuvem híbrida permite mover cargas de trabalho conforme necessidade, usando a pública para escalabilidade e a privada para dados sensíveis.
-            </div>
-            <div class="rascunho"><span>Anotações:</span></div>
-        </div>
-
-        <!-- Questão 8 -->
-        <div class="questao">
-            <p class="banca">CESPE – TRE-AM – 2023</p>
-            <p class="enunciado">8. A responsabilidade pela segurança em nuvem é sempre 100% do provedor.</p>
-            <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
-            </div>
-            <p class="gabarito">Gabarito: b) Errado</p>
-            <div class="comentario">
-                A segurança é compartilhada. O provedor cuida da infraestrutura; o cliente, da configuração, acesso, dados e aplicações.
-            </div>
-            <div class="rascunho"><span>Anotações:</span></div>
-        </div>
-
-        <!-- Questão 9 -->
-        <div class="questao">
-            <p class="banca">CESPE – INSS – 2022</p>
-            <p class="enunciado">9. O PaaS (Plataforma como Serviço) é ideal para desenvolvedores que desejam implantar aplicações sem gerenciar servidores.</p>
-            <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
-            </div>
-            <p class="gabarito">Gabarito: a) Certo</p>
-            <div class="comentario">
-                PaaS oferece ambiente de desenvolvimento, banco de dados, middleware e ferramentas. O foco é no código, não na infraestrutura.
-            </div>
-            <div class="rascunho"><span>Anotações:</span></div>
-        </div>
-
-        <!-- Questão 10 -->
-        <div class="questao">
-            <p class="banca">CESPE – TST – 2023</p>
-            <p class="enunciado">10. A nuvem permite o pagamento por uso, o que pode reduzir custos em períodos de baixa demanda.</p>
-            <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
-            </div>
-            <p class="gabarito">Gabarito: a) Certo</p>
-            <div class="comentario">
-                Modelo "pay-as-you-go" cobra apenas pelos recursos consumidos. Ideal para órgãos públicos com demanda variável.
-            </div>
-            <div class="rascunho"><span>Anotações:</span></div>
-        </div>
-
-        <div class="botoes">
-            <button class="btn" onclick="window.print()">📥 Baixar PDF</button>
-            <a href="../../index.html" class="btn">↩️ Voltar ao Menu</a>
-        </div>
-
-        <!-- ✅ SCRIPT DE RESET -->
-        <script>
-            function resetSimulado() {
-                const alternativas = document.querySelectorAll('.alternativas p');
-                alternativas.forEach(el => {
-                    el.style.fontWeight = 'normal';
-                    el.style.backgroundColor = '#f8f9fa';
-                    el.style.borderColor = '#e9ecef';
-                });
-
-                const comentarios = document.querySelectorAll('.comentario');
-                comentarios.forEach(el => {
-                    el.style.display = 'none';
-                });
-
-                const radios = document.querySelectorAll('input[type="radio"]');
-                radios.forEach(input => {
-                    input.checked = false;
-                });
-
-                const rascunhos = document.querySelectorAll('.rascunho');
-                rascunhos.forEach(el => {
-                    el.innerHTML = '<span>Anotações:</span>';
-                });
-
-                window.scrollTo(0, 0);
-            }
-
-            document.addEventListener('DOMContentLoaded', resetSimulado);
-
-            window.onpageshow = function(event) {
-                if (event.persisted) {
-                    window.location.reload();
-                }
-            };
-        </script>
-
-        <footer class="footer">
-            © 2025 | Marco Aurélio Siqueira | 
-            <a href="https://www.youtube.com/channel/UCFLK2Bw4KIDwiKd9pN_tI7Q" target="_blank">YouTube</a> | 
-            <a href="https://app.hotmart.com/products/producer" target="_blank">Materiais Completos</a>
-        </footer>
-    </div>
-</body>
-</html>
+            <
