@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
     <meta charset="UTF-8">
     <title>Simuladão TI – 100 Questões no Estilo CESPE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,6 +41,57 @@
             <a href="https://www.youtube.com/channel/UCFLK2Bw4KIDwiKd9pN_tI7Q" target="_blank">YouTube</a> | 
             <a href="https://app.hotmart.com/products/producer" target="_blank">Materiais Completos</a>
         </footer>
+
+        
     </div>
+    <script>
+    /**
+     * Função para resetar completamente o simulado ao carregar a página
+     * Garante que qualquer usuário acesse o Simuladão do zero
+     */
+    function resetSimulado() {
+        // Remove todas as classes de correção (correta/errada)
+        const alternativas = document.querySelectorAll('.alternativa');
+        alternativas.forEach(el => {
+            el.classList.remove('correta');
+            el.classList.remove('errada');
+            el.style.fontWeight = 'normal';
+            el.style.backgroundColor = '#f8f9fa';
+            el.style.borderColor = '#e9ecef';
+        });
+
+        // Esconde todos os feedbacks
+        const feedbacks = document.querySelectorAll('.feedback');
+        feedbacks.forEach(el => {
+            el.style.display = 'none';
+        });
+
+        // Limpa inputs de rádio, se estiver usando
+        const radios = document.querySelectorAll('input[type="radio"]');
+        radios.forEach(input => {
+            input.checked = false;
+        });
+
+        // Limpa áreas de rascunho (opcional)
+        const rascunhos = document.querySelectorAll('.rascunho');
+        rascunhos.forEach(el => {
+            el.innerHTML = '<span>Anotações:</span>';
+        });
+
+        // Rola para o topo
+        window.scrollTo(0, 0);
+    }
+
+    // Executa ao carregar a página
+    document.addEventListener('DOMContentLoaded', resetSimulado);
+
+    // Força recarregamento se o navegador usar cache de navegação (Back/Forward)
+    window.onpageshow = function(event) {
+        if (event.persisted) {
+            // Recarrega a página se veio do cache do histórico
+            window.location.reload();
+        }
+    };
+</script>
 </body>
 </html>
