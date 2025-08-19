@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <meta charset="UTF-8">
     <title>Arquitetura de Software – 10 Questões | Marco A. Siqueira</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -250,39 +253,18 @@
             <a href="../../index.html" class="btn">↩️ Voltar ao Menu</a>
         </div>
 
-        <footer class="footer">
-            © 2025 | Marco Aurélio Siqueira | 
-            <a href="https://www.youtube.com/channel/UCFLK2Bw4KIDwiKd9pN_tI7Q" target="_blank">YouTube</a> | 
-            <a href="https://app.hotmart.com/products/producer" target="_blank">Materiais Completos</a>
-        </footer>
-    </div>
-        <!-- Conteúdo das questões -->
-        <div class="questao">
-            <p class="banca">CESPE – TCU – 2023</p>
-            <p class="enunciado">1. A arquitetura em camadas permite que a camada de apresentação acesse diretamente o banco de dados.</p>
-            ...
-        </div>
-
-        <!-- Botões -->
-        <div class="botoes">
-            <button class="btn" onclick="window.print()">📥 Baixar PDF</button>
-            <a href="../../index.html" class="btn">↩️ Voltar ao Menu</a>
-        </div>
-
-        <!-- ✅ SCRIPT DE RESET -->
+        <!-- ✅ SCRIPT DE RESET (executa ao carregar) -->
         <script>
             function resetSimulado() {
-                const alternativas = document.querySelectorAll('.alternativa');
+                const alternativas = document.querySelectorAll('.alternativas p');
                 alternativas.forEach(el => {
-                    el.classList.remove('correta');
-                    el.classList.remove('errada');
                     el.style.fontWeight = 'normal';
                     el.style.backgroundColor = '#f8f9fa';
                     el.style.borderColor = '#e9ecef';
                 });
 
-                const feedbacks = document.querySelectorAll('.feedback');
-                feedbacks.forEach(el => {
+                const comentarios = document.querySelectorAll('.comentario');
+                comentarios.forEach(el => {
                     el.style.display = 'none';
                 });
 
@@ -314,8 +296,5 @@
             <a href="https://app.hotmart.com/products/producer" target="_blank">Materiais Completos</a>
         </footer>
     </div>
-</body>  <!-- ← Só depois disso fecha o </body> -->
-</html>
-    
 </body>
 </html>
