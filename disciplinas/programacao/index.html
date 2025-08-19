@@ -1,1 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Programação – 10 Questões | Marco A. Siqueira</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <style>
+        .questao {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .banca {
+            font-size: 0.9em;
+            color: #6c757d;
+            font-style: italic;
+            margin: 5px 0 10px;
+        }
+        .enunciado {
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        .alternativas {
+            margin: 10px 0;
+        }
+        .alternativas p {
+            margin: 8px 0;
+        }
+        .gabarito {
+            font-weight: bold;
+            color: #27ae60;
+            margin: 10px 0;
+            padding: 12px;
+            background-color: #f0fff4;
+            border-left: 4px solid #27ae60;
+            border-radius: 0 8px 8px 0;
+        }
+        .comentario {
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.96em;
+            color: #555;
+        }
+        .rascunho {
+            margin-top: 20px;
+            padding: 30px 15px;
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            text-align: center;
+            font-style: italic;
+            color: #777;
+            background-color: #f9f9f9;
+        }
+        .rascunho span {
+            font-weight: bold;
+            color: #333;
+        }
+        .botoes {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin: 10px 5px;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Programação</h1>
+            <p>10 Questões no Estilo CESPE com Gabarito e Comentários Técnicos</p>
+        </header>
 
+        <div class="destaque">
+            ✍️ Use o espaço de <strong>rascunho após cada questão</strong> para anotar suas reflexões e revisar com mais eficácia.
+        </div>
+
+        <!-- Questão 1 -->
+        <div class="questao">
+            <p class="banca">CESPE – TCU – 2023</p>
+            <p class="enunciado">1. Uma linguagem de programação orientada a objetos permite o uso de herança e encapsulamento.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: a) Certo</p>
+            <div class="comentario">
+                Herança permite reutilização de código. Encapsulamento controla o acesso a atributos e métodos. Pilares essenciais em sistemas complexos.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 2 -->
+        <div class="questao">
+            <p class="banca">CESPE – MPU – 2022</p>
+            <p class="enunciado">2. O paradigma funcional evita o uso de funções puras.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
+            <div class="comentario">
+                O paradigma funcional **baseia-se** em funções puras (sem efeitos colaterais). É usado em sistemas críticos por garantir previsibilidade.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 3 -->
+        <div class="questao">
+            <p class="banca">CESPE – TRE-SP – 2023</p>
+            <p class="enunciado">3. O comando SELECT é usado em linguagens de programação para controlar fluxo condicional.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
+            <div class="comentario">
+                SELECT é comando SQL para consultar banco de dados. Em programação, usa-se IF/ELSE para controle de fluxo.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 4 -->
+        <div class="questao">
+            <p class="banca">CESPE – INSS – 2022</p>
+            <p class="enunciado">4. A recursão ocorre quando uma função chama a si mesma.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: a) Certo</p>
+            <div class="comentario">
+                Recursão é poderosa, mas exige condição de parada para evitar estouro de pilha. Usada em algoritmos de busca e ordenação.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 5 -->
+        <div class="questao">
+            <p class="banca">CESPE – TST – 2023</p>
+            <p class="enunciado">5. Em Java, a plataforma independência é alcançada pela compilação direta para código de máquina.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
+            <div class="comentario">
+                Java compila para bytecode, executado pela JVM. É a JVM que torna a plataforma independente, não a compilação direta.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 6 -->
+        <div class="questao">
+            <p class="banca">CESPE – STM – 2022</p>
+            <p class="enunciado">6. O uso de variáveis globais é uma prática recomendada em programação estruturada.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
+            <div class="comentario">
+                Variáveis globais dificultam manutenção e teste. O ideal é o escopo local e passagem por parâmetro.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 7 -->
+        <div class="questao">
+            <p class="banca">CESPE – TCU – 2022</p>
+            <p class="enunciado">7. A linguagem Python é fortemente tipada e dinamicamente tipada.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: a) Certo</p>
+            <div class="comentario">
+                Fortemente tipada: não permite operações entre tipos incompatíveis sem conversão. Dinamicamente tipada: tipo é definido em tempo de execução.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 8 -->
+        <div class="questao">
+            <p class="banca">CESPE – TRE-AM – 2023</p>
+            <p class="enunciado">8. O algoritmo de ordenação Bubble Sort tem complexidade O(n log n) no pior caso.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
+            <div class="comentario">
+                Bubble Sort tem complexidade O(n²) no pior caso. Algoritmos como Merge Sort atingem O(n log n).
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 9 -->
+        <div class="questao">
+            <p class="banca">CESPE – INSS – 2022</p>
+            <p class="enunciado">9. Em programação web, o JavaScript é executado no servidor.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
+            <div class="comentario">
+                JavaScript é executado no **navegador** (cliente). Node.js permite execução no servidor, mas não é o padrão.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 10 -->
+        <div class="questao">
+            <p class="banca">CESPE – TST – 2023</p>
+            <p class="enunciado">10. O uso de bibliotecas de terceiros elimina a necessidade de testes unitários.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
+            <div class="comentario">
+                Bibliotecas de terceiros ainda precisam ser testadas em integração com o sistema. Testes unitários garantem qualidade do código próprio.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <div class="botoes">
+            <button class="btn" onclick="window.print()">📥 Baixar PDF</button>
+            <a href="../../index.html" class="btn">↩️ Voltar ao Menu</a>
+        </div>
+
+        <footer class="footer">
+            © 2025 | Marco Aurélio Siqueira | 
+            <a href="https://www.youtube.com/channel/UCFLK2Bw4KIDwiKd9pN_tI7Q" target="_blank">YouTube</a> | 
+            <a href="https://app.hotmart.com/products/producer" target="_blank">Materiais Completos</a>
+        </footer>
+    </div>
+</body>
+</html>
