@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Redes de Computadores – 50 Questões | Marco A. Siqueira</title>
+    <title>Redes de Computadores – 10 Questões | Marco A. Siqueira</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/css/style.css">
     <style>
@@ -25,6 +25,21 @@
             margin-bottom: 15px;
             color: #2c3e50;
         }
+        .alternativas {
+            margin: 10px 0;
+        }
+        .alternativas p {
+            margin: 8px 0;
+        }
+        .gabarito {
+            font-weight: bold;
+            color: #27ae60;
+            margin: 10px 0;
+            padding: 12px;
+            background-color: #f0fff4;
+            border-left: 4px solid #27ae60;
+            border-radius: 0 8px 8px 0;
+        }
         .comentario {
             background: #f8f9fa;
             border-left: 4px solid #3498db;
@@ -33,15 +48,6 @@
             border-radius: 0 8px 8px 0;
             font-size: 0.96em;
             color: #555;
-        }
-        .dica-banca {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 12px;
-            margin: 15px 0;
-            border-radius: 0 8px 8px 0;
-            color: #856404;
-            font-size: 0.96em;
         }
         .rascunho {
             margin-top: 20px;
@@ -52,6 +58,10 @@
             font-style: italic;
             color: #777;
             background-color: #f9f9f9;
+        }
+        .rascunho span {
+            font-weight: bold;
+            color: #333;
         }
         .botoes {
             text-align: center;
@@ -78,7 +88,7 @@
     <div class="container">
         <header>
             <h1>Redes de Computadores</h1>
-            <p>50 Questões no Estilo CESPE com Gabarito e Comentários Técnicos</p>
+            <p>10 Questões no Estilo CESPE com Gabarito e Comentários Técnicos</p>
         </header>
 
         <div class="destaque">
@@ -89,73 +99,152 @@
         <div class="questao">
             <p class="banca">CESPE – TCU – 2023</p>
             <p class="enunciado">1. O protocolo HTTP opera na camada de transporte do modelo OSI.</p>
-            <p><strong>Gabarito: b) Errado</strong></p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
             <div class="comentario">
-                <strong>Comentário:</strong> HTTP é um protocolo da <strong>camada de aplicação</strong> (7). A camada de transporte (4) é onde atuam TCP e UDP.
+                HTTP é um protocolo da <strong>camada de aplicação</strong> (7). A camada de transporte (4) é onde atuam TCP e UDP.
             </div>
-            <div class="dica-banca">
-                <strong>📌 Dica CESPE:</strong> "HTTP na camada de transporte" = armadilha clássica. Sempre errado.
-            </div>
-            <div class="rascunho">Seu rascunho aqui...</div>
+            <div class="rascunho"><span>Anotações:</span></div>
         </div>
 
         <!-- Questão 2 -->
         <div class="questao">
             <p class="banca">CESPE – TRE-SP – 2022</p>
             <p class="enunciado">2. O DNS utiliza exclusivamente o protocolo TCP para resolver nomes de domínio.</p>
-            <p><strong>Gabarito: b) Errado</strong></p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
             <div class="comentario">
-                <strong>Comentário:</strong> DNS usa principalmente <strong>UDP</strong> para consultas rápidas. O TCP é usado apenas em transferências de zona (zonetransfer) ou respostas muito longas.
+                DNS usa principalmente <strong>UDP</strong>. TCP é usado apenas em transferências de zona (zonetransfer) ou respostas muito longas.
             </div>
-            <div class="dica-banca">
-                <strong>📌 Dica CESPE:</strong> "Exclusivamente TCP" em DNS = sempre errado.
-            </div>
-            <div class="rascunho">Seu rascunho aqui...</div>
+            <div class="rascunho"><span>Anotações:</span></div>
         </div>
 
         <!-- Questão 3 -->
         <div class="questao">
             <p class="banca">CESPE – MPU – 2023</p>
             <p class="enunciado">3. O comando ping utiliza o protocolo ICMP para testar conectividade entre dispositivos.</p>
-            <p><strong>Gabarito: a) Certo</strong></p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: a) Certo</p>
             <div class="comentario">
-                <strong>Comentário:</strong> O ping envia pacotes <strong>ICMP Echo Request</strong> e espera por <strong>ICMP Echo Reply</strong>. É a ferramenta básica de diagnóstico de rede.
+                O ping envia pacotes <strong>ICMP Echo Request</strong> e espera por <strong>ICMP Echo Reply</strong>. É a ferramenta básica de diagnóstico de rede.
             </div>
-            <div class="dica-banca">
-                <strong>📌 Dica CESPE:</strong> Ping + ICMP = combinação correta. Memorize.
-            </div>
-            <div class="rascunho">Seu rascunho aqui...</div>
+            <div class="rascunho"><span>Anotações:</span></div>
         </div>
 
         <!-- Questão 4 -->
         <div class="questao">
             <p class="banca">CESPE – INSS – 2022</p>
             <p class="enunciado">4. Em uma sub-rede com máscara 255.255.255.0, o número máximo de hosts utilizáveis é 256.</p>
-            <p><strong>Gabarito: b) Errado</strong></p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
             <div class="comentario">
-                <strong>Comentário:</strong> Com máscara /24 (255.255.255.0), há 256 endereços, mas dois são reservados: o de rede (ex: 192.168.1.0) e o de broadcast (192.168.1.255). Portanto, são <strong>254 hosts utilizáveis</strong>.
+                Com máscara /24 (255.255.255.0), há 256 endereços, mas dois são reservados: o de rede (ex: 192.168.1.0) e o de broadcast (192.168.1.255). Portanto, são <strong>254 hosts utilizáveis</strong>.
             </div>
-            <div class="dica-banca">
-                <strong>📌 Dica CESPE:</strong> "Máximo de hosts = 256" → errado. Sempre desconte 2.
-            </div>
-            <div class="rascunho">Seu rascunho aqui...</div>
+            <div class="rascunho"><span>Anotações:</span></div>
         </div>
 
         <!-- Questão 5 -->
         <div class="questao">
             <p class="banca">CESPE – TST – 2023</p>
             <p class="enunciado">5. O protocolo HTTPS utiliza a porta 80 por padrão.</p>
-            <p><strong>Gabarito: b) Errado</strong></p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
             <div class="comentario">
-                <strong>Comentário:</strong> HTTP usa a porta 80. HTTPS usa a porta <strong>443</strong> por padrão. Confundir portas é uma armadilha comum.
+                HTTP usa a porta 80. HTTPS usa a porta <strong>443</strong> por padrão. Confundir portas é uma armadilha comum.
             </div>
-            <div class="dica-banca">
-                <strong>📌 Dica CESPE:</strong> "HTTPS na porta 80" = sempre errado.
-            </div>
-            <div class="rascunho">Seu rascunho aqui...</div>
+            <div class="rascunho"><span>Anotações:</span></div>
         </div>
 
-        <!-- Botões -->
+        <!-- Questão 6 -->
+        <div class="questao">
+            <p class="banca">CESPE – STM – 2022</p>
+            <p class="enunciado">6. O modelo OSI possui 7 camadas, enquanto o TCP/IP possui 4 camadas.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: a) Certo</p>
+            <div class="comentario">
+                OSI: 7 camadas (Física a Aplicação). TCP/IP: 4 camadas (Enlace, Internet, Transporte, Aplicação). A CESPE adora comparar os modelos.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 7 -->
+        <div class="questao">
+            <p class="banca">CESPE – TCE-RJ – 2023</p>
+            <p class="enunciado">7. O protocolo FTP é seguro por padrão, pois criptografa todos os dados transmitidos.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
+            <div class="comentario">
+                FTP transmite dados em texto puro. Para segurança, usa-se FTPS ou SFTP. A CESPE testa conhecimento de segurança básica.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 8 -->
+        <div class="questao">
+            <p class="banca">CESPE – TRE-AM – 2022</p>
+            <p class="enunciado">8. O endereço IP 127.0.0.1 é usado para loopback e testes locais.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: a) Certo</p>
+            <div class="comentario">
+                127.0.0.1 é o endereço de loopback. Qualquer pacote enviado a ele é retornado ao próprio host, sem sair da interface de rede.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 9 -->
+        <div class="questao">
+            <p class="banca">CESPE – INSS – 2023</p>
+            <p class="enunciado">9. O protocolo UDP é confiável e orientado à conexão.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: b) Errado</p>
+            <div class="comentario">
+                UDP é <strong>não confiável</strong> e <strong>sem conexão</strong>. TCP é que é confiável. A CESPE inverte os atributos para testar atenção.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
+        <!-- Questão 10 -->
+        <div class="questao">
+            <p class="banca">CESPE – TCU – 2022</p>
+            <p class="enunciado">10. O NAT (Network Address Translation) permite que múltiplos dispositivos compartilhem um único endereço IP público.</p>
+            <div class="alternativas">
+                <p>a) Certo</p>
+                <p>b) Errado</p>
+            </div>
+            <p class="gabarito">Gabarito: a) Certo</p>
+            <div class="comentario">
+                NAT é essencial em redes domésticas e corporativas. Ele traduz endereços privados (192.168.x.x) para um IP público na saída para a internet.
+            </div>
+            <div class="rascunho"><span>Anotações:</span></div>
+        </div>
+
         <div class="botoes">
             <button class="btn" onclick="window.print()">📥 Baixar PDF</button>
             <a href="../../index.html" class="btn">↩️ Voltar ao Menu</a>
