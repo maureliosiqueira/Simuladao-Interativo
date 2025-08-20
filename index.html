@@ -33,23 +33,20 @@
         }
 
         header {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
-        h1 {
-            font-size: 3.5em;
-            margin-bottom: 10px;
-            color: #fff;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        h1 i {
+        .logo {
             font-size: 2.5em;
-            color: #e74c3c;
+            font-weight: bold;
+            color: #ffd700;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .logo span {
+            color: #fff;
         }
 
         .subtitle {
@@ -110,8 +107,8 @@
         }
 
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5em;
+            .logo {
+                font-size: 2em;
             }
             .subtitle {
                 font-size: 1em;
@@ -122,13 +119,13 @@
 <body>
     <div class="container">
         <header>
-            <h1><i class="fas fa-rocket"></i> Simuladão de TI</h1>
+            <div class="logo">marcoa <span>Estudando T.I</span></div>
             <p class="subtitle">100 Questões no Estilo CESPE – Gabarito Comentado e Dicas por Banca<br>
                 <i class="fas fa-lightbulb"></i> Cada disciplina tem 10 questões com <span class="highlight">comentários técnicos</span> e <span class="highlight">dicas estratégicas</span>.</p>
         </header>
 
         <div class="disciplinas">
-            <a href="disciplina/arquitetura/index.html" class="disciplina">Arquitetura de Software</a>
+            <a href="arquitetura/index.html" class="disciplina">Arquitetura de Software</a>
             <a href="engenharia-software/index.html" class="disciplina">Engenharia de Software</a>
             <a href="banco-de-dados/index.html" class="disciplina">Banco de Dados</a>
             <a href="redes/index.html" class="disciplina">Redes de Computadores</a>
