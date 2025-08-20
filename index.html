@@ -1,39 +1,145 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
     <meta charset="UTF-8">
-    <title>Simuladão TI – 100 Questões no Estilo CESPE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Simuladão Interativo de TI | Marco A. Siqueira</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        header {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            color: #fff;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        h1 i {
+            font-size: 2.5em;
+            color: #e74c3c;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #e0e0e0;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .disciplinas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .disciplina {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            text-align: center;
+            font-size: 1.1em;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .disciplina:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .footer {
+            font-size: 0.9em;
+            color: #ccc;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #ffd700;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            .subtitle {
+                font-size: 1em;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>🚀 Simuladão TI</h1>
-            <p>100 Questões no Estilo CESPE – Gabarito Comentado e Dicas por Banca</p>
+            <h1><i class="fas fa-rocket"></i> Simuladão de TI</h1>
+            <p class="subtitle">100 Questões no Estilo CESPE – Gabarito Comentado e Dicas por Banca<br>
+                <i class="fas fa-lightbulb"></i> Cada disciplina tem 10 questões com <span class="highlight">comentários técnicos</span> e <span class="highlight">dicas estratégicas</span>.</p>
         </header>
 
-        <div class="destaque">
-            ✍️ Cada disciplina tem 10 questões com <strong>comentários técnicos</strong> e <strong>dicas estratégicas</strong>.
-        </div>
-
-        <div class="menu-disciplinas">
-            <h2>Escolha uma Disciplina</h2>
-            <div class="grid">
-                <a href="disciplinas/arquitetura/index.html" class="card">Arquitetura de Software</a>
-                <a href="disciplinas/engenharia-software/index.html" class="card">Engenharia de Software</a>
-                <a href="disciplinas/banco-de-dados/index.html" class="card">Banco de Dados</a>
-                <a href="disciplinas/redes/index.html" class="card">Redes de Computadores</a>
-                <a href="disciplinas/governanca/index.html" class="card">Governança de TI (COBIT/ITIL)</a>
-                <a href="disciplinas/metodologias-agil/index.html" class="card">Metodologias Ágeis</a>
-                <a href="disciplinas/devops/index.html" class="card">DevOps</a>
-                <a href="disciplinas/cloud-computing/index.html" class="card">Cloud Computing</a>
-                <a href="disciplinas/programacao/index.html" class="card">Programação</a>
-                <a href="disciplinas/sistemas-operacionais/index.html" class="card">Sistemas Operacionais</a>
-            </div>
+        <div class="disciplinas">
+            <a href="arquitetura/index.html" class="disciplina">Arquitetura de Software</a>
+            <a href="engenharia-software/index.html" class="disciplina">Engenharia de Software</a>
+            <a href="banco-de-dados/index.html" class="disciplina">Banco de Dados</a>
+            <a href="redes/index.html" class="disciplina">Redes de Computadores</a>
+            <a href="governanca/index.html" class="disciplina">Governança de TI (COBIT/ITIL)</a>
+            <a href="metodologias-agil/index.html" class="disciplina">Metodologias Ágeis</a>
+            <a href="devops/index.html" class="disciplina">DevOps</a>
+            <a href="cloud-computing/index.html" class="disciplina">Cloud Computing</a>
+            <a href="programacao/index.html" class="disciplina">Programação</a>
+            <a href="sistemas-operacionais/index.html" class="disciplina">Sistemas Operacionais</a>
+            <a href="seguranca/index.html" class="disciplina">Segurança da Informação</a>
+            <a href="lgpd-etica/index.html" class="disciplina">LGPD e Ética</a>
         </div>
 
         <footer class="footer">
