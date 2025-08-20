@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <meta charset="UTF-8">
     <title>Programação – 10 Questões | Marco A. Siqueira</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,11 +28,29 @@
             margin-bottom: 15px;
             color: #2c3e50;
         }
-        .alternativas {
-            margin: 10px 0;
-        }
         .alternativas p {
             margin: 8px 0;
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .alternativas p:hover {
+            background-color: #f1f3f5;
+            border-color: #007bff;
+        }
+        .alternativa-certa {
+            background-color: #d4edda !important;
+            border-color: #27ae60 !important;
+            color: #155724;
+            font-weight: bold;
+        }
+        .alternativa-errada {
+            background-color: #f8d7da !important;
+            border-color: #c82333 !important;
+            color: #721c24;
+            font-weight: bold;
         }
         .gabarito {
             font-weight: bold;
@@ -39,6 +60,7 @@
             background-color: #f0fff4;
             border-left: 4px solid #27ae60;
             border-radius: 0 8px 8px 0;
+            display: none;
         }
         .comentario {
             background: #f8f9fa;
@@ -48,6 +70,7 @@
             border-radius: 0 8px 8px 0;
             font-size: 0.96em;
             color: #555;
+            display: none;
         }
         .rascunho {
             margin-top: 20px;
@@ -88,11 +111,11 @@
     <div class="container">
         <header>
             <h1>Programação</h1>
-            <p>10 Questões no Estilo CESPE com Gabarito e Comentários Técnicos</p>
+            <p>10 Questões no Estilo CESPE com Feedback Imediato</p>
         </header>
 
         <div class="destaque">
-            ✍️ Use o espaço de <strong>rascunho após cada questão</strong> para anotar suas reflexões e revisar com mais eficácia.
+            ✍️ Clique na alternativa para ver o gabarito. O simulado começa do zero a cada acesso.
         </div>
 
         <!-- Questão 1 -->
@@ -100,10 +123,10 @@
             <p class="banca">CESPE – TCU – 2023</p>
             <p class="enunciado">1. Uma linguagem de programação orientada a objetos permite o uso de herança e encapsulamento.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, true, 1)">a) Certo</p>
+                <p onclick="marcar(this, false, 1)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: a) Certo</p>
+            <p class="gabarito">✅ Gabarito: a) Certo</p>
             <div class="comentario">
                 Herança permite reutilização de código. Encapsulamento controla o acesso a atributos e métodos. Pilares essenciais em sistemas complexos.
             </div>
@@ -115,12 +138,12 @@
             <p class="banca">CESPE – MPU – 2022</p>
             <p class="enunciado">2. O paradigma funcional evita o uso de funções puras.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, false, 2)">a) Certo</p>
+                <p onclick="marcar(this, true, 2)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: b) Errado</p>
+            <p class="gabarito">✅ Gabarito: b) Errado</p>
             <div class="comentario">
-                O paradigma funcional **baseia-se** em funções puras (sem efeitos colaterais). É usado em sistemas críticos por garantir previsibilidade.
+                O paradigma funcional <strong>baseia-se</strong> em funções puras (sem efeitos colaterais). É usado em sistemas críticos por garantir previsibilidade.
             </div>
             <div class="rascunho"><span>Anotações:</span></div>
         </div>
@@ -130,10 +153,10 @@
             <p class="banca">CESPE – TRE-SP – 2023</p>
             <p class="enunciado">3. O comando SELECT é usado em linguagens de programação para controlar fluxo condicional.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, false, 3)">a) Certo</p>
+                <p onclick="marcar(this, true, 3)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: b) Errado</p>
+            <p class="gabarito">✅ Gabarito: b) Errado</p>
             <div class="comentario">
                 SELECT é comando SQL para consultar banco de dados. Em programação, usa-se IF/ELSE para controle de fluxo.
             </div>
@@ -145,10 +168,10 @@
             <p class="banca">CESPE – INSS – 2022</p>
             <p class="enunciado">4. A recursão ocorre quando uma função chama a si mesma.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, true, 4)">a) Certo</p>
+                <p onclick="marcar(this, false, 4)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: a) Certo</p>
+            <p class="gabarito">✅ Gabarito: a) Certo</p>
             <div class="comentario">
                 Recursão é poderosa, mas exige condição de parada para evitar estouro de pilha. Usada em algoritmos de busca e ordenação.
             </div>
@@ -160,10 +183,10 @@
             <p class="banca">CESPE – TST – 2023</p>
             <p class="enunciado">5. Em Java, a plataforma independência é alcançada pela compilação direta para código de máquina.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, false, 5)">a) Certo</p>
+                <p onclick="marcar(this, true, 5)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: b) Errado</p>
+            <p class="gabarito">✅ Gabarito: b) Errado</p>
             <div class="comentario">
                 Java compila para bytecode, executado pela JVM. É a JVM que torna a plataforma independente, não a compilação direta.
             </div>
@@ -175,10 +198,10 @@
             <p class="banca">CESPE – STM – 2022</p>
             <p class="enunciado">6. O uso de variáveis globais é uma prática recomendada em programação estruturada.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, false, 6)">a) Certo</p>
+                <p onclick="marcar(this, true, 6)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: b) Errado</p>
+            <p class="gabarito">✅ Gabarito: b) Errado</p>
             <div class="comentario">
                 Variáveis globais dificultam manutenção e teste. O ideal é o escopo local e passagem por parâmetro.
             </div>
@@ -190,10 +213,10 @@
             <p class="banca">CESPE – TCU – 2022</p>
             <p class="enunciado">7. A linguagem Python é fortemente tipada e dinamicamente tipada.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, true, 7)">a) Certo</p>
+                <p onclick="marcar(this, false, 7)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: a) Certo</p>
+            <p class="gabarito">✅ Gabarito: a) Certo</p>
             <div class="comentario">
                 Fortemente tipada: não permite operações entre tipos incompatíveis sem conversão. Dinamicamente tipada: tipo é definido em tempo de execução.
             </div>
@@ -205,10 +228,10 @@
             <p class="banca">CESPE – TRE-AM – 2023</p>
             <p class="enunciado">8. O algoritmo de ordenação Bubble Sort tem complexidade O(n log n) no pior caso.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, false, 8)">a) Certo</p>
+                <p onclick="marcar(this, true, 8)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: b) Errado</p>
+            <p class="gabarito">✅ Gabarito: b) Errado</p>
             <div class="comentario">
                 Bubble Sort tem complexidade O(n²) no pior caso. Algoritmos como Merge Sort atingem O(n log n).
             </div>
@@ -220,12 +243,12 @@
             <p class="banca">CESPE – INSS – 2022</p>
             <p class="enunciado">9. Em programação web, o JavaScript é executado no servidor.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, false, 9)">a) Certo</p>
+                <p onclick="marcar(this, true, 9)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: b) Errado</p>
+            <p class="gabarito">✅ Gabarito: b) Errado</p>
             <div class="comentario">
-                JavaScript é executado no **navegador** (cliente). Node.js permite execução no servidor, mas não é o padrão.
+                JavaScript é executado no <strong>navegador</strong> (cliente). Node.js permite execução no servidor, mas não é o padrão.
             </div>
             <div class="rascunho"><span>Anotações:</span></div>
         </div>
@@ -235,10 +258,10 @@
             <p class="banca">CESPE – TST – 2023</p>
             <p class="enunciado">10. O uso de bibliotecas de terceiros elimina a necessidade de testes unitários.</p>
             <div class="alternativas">
-                <p>a) Certo</p>
-                <p>b) Errado</p>
+                <p onclick="marcar(this, false, 10)">a) Certo</p>
+                <p onclick="marcar(this, true, 10)">b) Errado</p>
             </div>
-            <p class="gabarito">Gabarito: b) Errado</p>
+            <p class="gabarito">✅ Gabarito: b) Errado</p>
             <div class="comentario">
                 Bibliotecas de terceiros ainda precisam ser testadas em integração com o sistema. Testes unitários garantem qualidade do código próprio.
             </div>
@@ -256,5 +279,43 @@
             <a href="https://app.hotmart.com/products/producer" target="_blank">Materiais Completos</a>
         </footer>
     </div>
+
+    <script>
+        function marcar(elemento, estaCerto, questaoId) {
+            const alternativas = elemento.parentElement.querySelectorAll('p');
+            alternativas.forEach(el => {
+                el.style.fontWeight = 'normal';
+                el.style.backgroundColor = '#f8f9fa';
+                el.style.borderColor = '#e9ecef';
+            });
+
+            if (estaCerto) {
+                elemento.classList.add('alternativa-certa');
+            } else {
+                elemento.classList.add('alternativa-errada');
+            }
+
+            const gabarito = elemento.parentElement.nextElementSibling;
+            const comentario = gabarito.nextElementSibling;
+            gabarito.style.display = 'block';
+            comentario.style.display = 'block';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.gabarito, .comentario').forEach(el => {
+                el.style.display = 'none';
+            });
+            document.querySelectorAll('.alternativas p').forEach(el => {
+                el.classList.remove('alternativa-certa', 'alternativa-errada');
+            });
+            window.scrollTo(0, 0);
+        });
+
+        window.onpageshow = function(event) {
+            if (event.persisted) {
+                window.location.reload();
+            }
+        };
+    </script>
 </body>
 </html>
