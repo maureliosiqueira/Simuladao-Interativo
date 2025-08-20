@@ -5,53 +5,10 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arquitetura de Software – 10 Questões | Marco A. Siqueira</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/css/style.css">
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: #333;
-            line-height: 1.8;
-        }
-        .container {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #ffffff;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border-radius: 10px;
-        }
-        header {
-            text-align: center;
-            padding: 30px 20px;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: white;
-            border-radius: 8px;
-            margin-bottom: 30px;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 1.8em;
-        }
-        header p {
-            margin: 10px 0 0;
-            font-size: 1.1em;
-        }
-        .destaque {
-            background: #fff3cd;
-            border-left: 5px solid #ffc107;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 0 10px 10px 0;
-            color: #856404;
-            font-weight: bold;
-            text-align: center;
-            font-size: 1.1em;
-        }
         .questao {
             background: white;
             border: 1px solid #ddd;
@@ -170,94 +127,3 @@
                 <p onclick="marcar(this, false, 1)">b) Errado</p>
             </div>
             <p class="gabarito">✅ Gabarito: a) Certo</p>
-            <div class="comentario">
-                A arquitetura de software é o "projeto estrutural" do sistema, definindo módulos, camadas e como eles se comunicam. Em TI pública, uma boa arquitetura garante escalabilidade, segurança e manutenção eficiente de sistemas críticos.
-            </div>
-            <div class="rascunho"><span>Anotações:</span></div>
-        </div>
-
-        <!-- Questão 2 -->
-        <div class="questao">
-            <p class="banca">CESPE – TCE-RJ – 2023</p>
-            <p class="enunciado">2. O padrão arquitetural MVC separa a lógica de negócio, a interface com o usuário e o controle de entrada.</p>
-            <div class="alternativas">
-                <p onclick="marcar(this, true, 2)">a) Certo</p>
-                <p onclick="marcar(this, false, 2)">b) Errado</p>
-            </div>
-            <p class="gabarito">✅ Gabarito: a) Certo</p>
-            <div class="comentario">
-                MVC (Model-View-Controller) promove modularidade e baixo acoplamento. É amplamente usado em aplicações web governamentais por facilitar manutenção e testes.
-            </div>
-            <div class="rascunho"><span>Anotações:</span></div>
-        </div>
-
-        <!-- Questão 3 -->
-        <div class="questao">
-            <p class="banca">CESPE – TRE-AM – 2023</p>
-            <p class="enunciado">3. A arquitetura em camadas permite que a camada de apresentação acesse diretamente o banco de dados.</p>
-            <div class="alternativas">
-                <p onclick="marcar(this, false, 3)">a) Certo</p>
-                <p onclick="marcar(this, true, 3)">b) Errado</p>
-            </div>
-            <p class="gabarito">✅ Gabarito: b) Errado</p>
-            <div class="comentario">
-                A comunicação deve ser sequencial: apresentação → negócio → dados. Acesso direto viola o princípio da arquitetura em camadas.
-            </div>
-            <div class="rascunho"><span>Anotações:</span></div>
-        </div>
-
-        <div class="botoes">
-            <button class="btn" onclick="window.print()">📥 Baixar PDF</button>
-            <a href="../../index.html" class="btn">↩️ Voltar ao Menu</a>
-        </div>
-
-        <footer class="footer">
-            © 2025 | Marco Aurélio Siqueira | 
-            <a href="https://www.youtube.com/channel/UCFLK2Bw4KIDwiKd9pN_tI7Q" target="_blank">YouTube</a> | 
-            <a href="https://app.hotmart.com/products/producer" target="_blank">Materiais Completos</a>
-        </footer>
-    </div>
-
-    <script>
-        // Função principal: marca a alternativa e mostra gabarito
-        function marcar(elemento, estaCerto, questaoId) {
-            const alternativas = elemento.parentElement.querySelectorAll('p');
-            alternativas.forEach(el => {
-                el.style.fontWeight = 'normal';
-                el.style.backgroundColor = '#f8f9fa';
-                el.style.borderColor = '#e9ecef';
-            });
-
-            if (estaCerto) {
-                elemento.classList.add('alternativa-certa');
-            } else {
-                elemento.classList.add('alternativa-errada');
-            }
-
-            // Mostra gabarito e comentário
-            const gabarito = elemento.parentElement.nextElementSibling;
-            const comentario = gabarito.nextElementSibling;
-            gabarito.style.display = 'block';
-            comentario.style.display = 'block';
-        }
-
-        // Reset total ao carregar
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('.gabarito, .comentario').forEach(el => {
-                el.style.display = 'none';
-            });
-            document.querySelectorAll('.alternativas p').forEach(el => {
-                el.classList.remove('alternativa-certa', 'alternativa-errada');
-            });
-            window.scrollTo(0, 0);
-        });
-
-        // Força recarregamento se voltar com o botão do navegador
-        window.onpageshow = function(event) {
-            if (event.persisted) {
-                window.location.reload();
-            }
-        };
-    </script>
-</body>
-</html>
